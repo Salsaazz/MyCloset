@@ -1,0 +1,11 @@
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\bin\Debug\net8.0\MyCloset.Backend.Repository.deps.json
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\bin\Debug\net8.0\MyCloset.Backend.Repository.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\bin\Debug\net8.0\MyCloset.Backend.Repository.pdb
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.AssemblyInfoInputs.cache
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.AssemblyInfo.cs
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.csproj.CoreCompileInputs.cache
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\refint\MyCloset.Backend.Repository.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\MyCloset.Backend.Repository.pdb
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Repository\obj\Debug\net8.0\ref\MyCloset.Backend.Repository.dll
