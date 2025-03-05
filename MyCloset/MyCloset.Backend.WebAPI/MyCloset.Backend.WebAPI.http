@@ -1,0 +1,6 @@
+@MyCloset.Backend.WebAPI_HostAddress = http://localhost:5213
+
+GET {{MyCloset.Backend.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

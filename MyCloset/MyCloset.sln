@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Frontend.MAUI", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Domain", "MyCloset.Backend.Domain\MyCloset.Backend.Domain.csproj", "{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Repository", "MyCloset.Backend.Repository\MyCloset.Backend.Repository.csproj", "{DD29AEA6-26BB-4048-93EB-1F72FEF689D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Infrastructure", "MyCloset.Backend.Repository\MyCloset.Backend.Infrastructure.csproj", "{DD29AEA6-26BB-4048-93EB-1F72FEF689D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Application", "MyCloset.Backend.Application\MyCloset.Backend.Application.csproj", "{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Presentation", "MyCloset.Backend.Presentation\MyCloset.Backend.Presentation.csproj", "{A6204FCB-D113-4110-AAB4-363B1415BB95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.WebAPI", "MyCloset.Backend.WebAPI\MyCloset.Backend.WebAPI.csproj", "{BCADA828-12B1-4FD6-A628-20268AFD5BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6204FCB-D113-4110-AAB4-363B1415BB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6204FCB-D113-4110-AAB4-363B1415BB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6204FCB-D113-4110-AAB4-363B1415BB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6204FCB-D113-4110-AAB4-363B1415BB95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCADA828-12B1-4FD6-A628-20268AFD5BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCADA828-12B1-4FD6-A628-20268AFD5BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCADA828-12B1-4FD6-A628-20268AFD5BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCADA828-12B1-4FD6-A628-20268AFD5BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
