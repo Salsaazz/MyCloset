@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,6 +17,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyCloset.Backend.Repository\MyCloset.Backend.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>
