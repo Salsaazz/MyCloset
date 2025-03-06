@@ -5,7 +5,7 @@ namespace MyCloset.Backend.Domain.Models
     public class Clothing
     {
         public uint Id { get; init; }
-        public required string Name { get; set; }
+        public string Name { get; set; }
         public Color[] Colors { get; set; }
         public Size Size { get; set; }
         private DateOnly? _date;
@@ -21,11 +21,21 @@ namespace MyCloset.Backend.Domain.Models
             }
         }
         public Season Season { get; set; }
-        public uint Prize { get; set; }
+        private double _prize;
+        public double Prize
+        {
+            get => _prize;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Invalid prize. The prize cannot be less than 0.");
+                _prize = value;
+            }
+        }
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
 
-        public Clothing(string name, Color[] colors, Size size, Season season, uint prize,
+        public Clothing(string name, Color[] colors, Size size, Season season, double prize,
             Aesthetic aesthetic, ClothingType type, DateOnly? date)
         {
             Name = name;

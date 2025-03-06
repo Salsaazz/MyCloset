@@ -30,7 +30,7 @@ namespace MyCloset.Backend.WebAPI.Controllers
             try
             {
                 await _mediator.Send(new CreateClothingCommand() { Clothing = clothing });
-                return Ok();
+                return Created();
             }
             catch (Exception e)
             {

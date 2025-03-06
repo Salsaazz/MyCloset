@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MyCloset.Backend.Application.Extensions;
 using MyCloset.Backend.Domain.Models;
 using MyCloset.Backend.Infrastructure.Interfaces;
 
@@ -21,7 +22,9 @@ namespace MyCloset.Backend.Application.CQRS.Commands
 
         private static void FormatClothingObj(Clothing clothing)
         {
-            clothing.Name = clothing.Name;
+            clothing.Name = clothing.Name
+                .FormatString()
+                .ToLower();
         }
     }
 
