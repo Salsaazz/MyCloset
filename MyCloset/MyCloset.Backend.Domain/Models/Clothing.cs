@@ -2,12 +2,12 @@
 
 namespace MyCloset.Backend.Domain.Models
 {
-    public class Clothing(string name, Color[] colors, Size size, Season season, uint prize, Aesthetic aesthetic, ClothingType type, DateOnly? date)
+    public class Clothing
     {
         public uint Id { get; init; }
-        public string Name => name;
-        public Color[] Colors => colors;
-        public Size Size => size;
+        public required string Name { get; set; }
+        public Color[] Colors { get; set; }
+        public Size Size { get; set; }
         private DateOnly? _date;
         public DateOnly? Date
         {
@@ -15,14 +15,27 @@ namespace MyCloset.Backend.Domain.Models
             set
             {
 
-                if (_date > DateOnly.FromDateTime(DateTime.Now))
+                if (value > DateOnly.FromDateTime(DateTime.Now))
                     throw new ArgumentException("Invalid date. The date cannot be set in the future.");
-                _date = date;
+                _date = value;
             }
         }
-        public Season Season => season;
-        public uint Prize => prize;
-        public Aesthetic Aesthetic => aesthetic;
-        public ClothingType Type => type;
+        public Season Season { get; set; }
+        public uint Prize { get; set; }
+        public Aesthetic Aesthetic { get; set; }
+        public ClothingType Type { get; set; }
+
+        public Clothing(string name, Color[] colors, Size size, Season season, uint prize,
+            Aesthetic aesthetic, ClothingType type, DateOnly? date)
+        {
+            Name = name;
+            Colors = colors;
+            Size = size;
+            Season = season;
+            Prize = prize;
+            Aesthetic = aesthetic;
+            Type = type;
+            Date = date;
+        }
     }
 }

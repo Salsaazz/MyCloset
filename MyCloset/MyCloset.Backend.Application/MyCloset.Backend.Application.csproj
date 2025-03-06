@@ -19,8 +19,4 @@
     <ProjectReference Include="..\MyCloset.Backend.Repository\MyCloset.Backend.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>
