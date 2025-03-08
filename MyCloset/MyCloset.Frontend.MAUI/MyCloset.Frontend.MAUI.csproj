@@ -73,4 +73,19 @@
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="ClothingView.xaml.cs">
+	    <DependentUpon>ClothingView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="AddClothingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ClothingView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

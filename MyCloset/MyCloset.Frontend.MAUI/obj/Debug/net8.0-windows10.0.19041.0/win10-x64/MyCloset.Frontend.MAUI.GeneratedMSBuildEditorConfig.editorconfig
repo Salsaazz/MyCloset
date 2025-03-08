@@ -30,6 +30,12 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/salwa/Documents/MyCloset/MyCloset/MyCloset.Frontend.MAUI/AddClothingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MyCloset.Frontend.MAUI.AddClothingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = AddClothingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = AddClothingPage.xaml
+
 [C:/Users/salwa/Documents/MyCloset/MyCloset/MyCloset.Frontend.MAUI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyCloset.Frontend.MAUI.App.xaml
@@ -41,6 +47,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyCloset.Frontend.MAUI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/salwa/Documents/MyCloset/MyCloset/MyCloset.Frontend.MAUI/ClothingView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MyCloset.Frontend.MAUI.ClothingView.xaml
+build_metadata.AdditionalFiles.TargetPath = ClothingView.xaml
+build_metadata.AdditionalFiles.RelativePath = ClothingView.xaml
 
 [C:/Users/salwa/Documents/MyCloset/MyCloset/MyCloset.Frontend.MAUI/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
