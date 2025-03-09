@@ -47,6 +47,9 @@ namespace MyCloset.Backend.Infrastructure.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Store")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 

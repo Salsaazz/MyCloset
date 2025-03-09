@@ -6,6 +6,7 @@ namespace MyCloset.Backend.Domain.Models
     {
         public uint Id { get; init; }
         public string Name { get; set; }
+        public string? Store { get; set; }
         public Color[] Colors { get; set; }
         public Size Size { get; set; }
         private DateOnly? _date;

@@ -24,6 +24,21 @@ namespace MyCloset.Backend.WebAPI.Controllers
 
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            try
+            {
+                return Ok(await _mediator.Send(new GetClothingByIdQuery() { Id = uint.Parse(id) }));
+            }
+            catch (Exception e)
+            {
+
+                return StatusCode(500, e.Message);
+            }
+
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddClothing([FromBody] Clothing clothing)
         {

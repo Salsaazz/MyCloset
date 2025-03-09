@@ -1,4 +1,6 @@
-﻿using MyCloset.Backend.Domain.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MyCloset.Backend.Application.DTOs;
+using MyCloset.Backend.Domain.Models;
 using MyCloset.Backend.Infrastructure.Contexts;
 using MyCloset.Backend.Infrastructure.Interfaces;
 
@@ -15,9 +17,25 @@ namespace MyCloset.Backend.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public IQueryable<Clothing> GetAllClothing()
+        public IQueryable<ClothingDTO> GetAllClothing()
         {
-            return _dbContext.Clothes.AsQueryable();
+            IQueryable<ClothingDTO>? clothes = _dbContext.Clothes.AsQueryable().Select(c => new ClothingDTO
+            {
+
+                Id = c.Id,
+                Name = c.Name,
+                Store = c.Store,
+                Date = c.Date
+            });
+
+            return clothes.Any() ? clothes : Enumerable.Empty<ClothingDTO>().AsQueryable();
+        }
+
+        public async Task<Clothing> GetClothingById(uint id)
+        {
+            return await _dbContext.Clothes
+                .AsQueryable<Clothing>()
+                .FirstOrDefaultAsync(c => c.Id == id) ?? throw new KeyNotFoundException("Invalid id. Clothing not found.");
         }
     }
 }
