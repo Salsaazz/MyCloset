@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyCloset.Frontend.MAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+394a852004cd8371695f42e77f97e2d6289b5abf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e3868cbf767707e3baf07d9cc54ad1c7739772e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyCloset.Frontend.MAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyCloset.Frontend.MAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
