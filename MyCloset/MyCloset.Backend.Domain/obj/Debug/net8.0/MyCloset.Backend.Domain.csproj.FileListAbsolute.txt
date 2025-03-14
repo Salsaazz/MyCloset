@@ -1,0 +1,13 @@
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\bin\Debug\net8.0\MyCloset.Backend.Domain.deps.json
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\bin\Debug\net8.0\MyCloset.Backend.Domain.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\bin\Debug\net8.0\MyCloset.Backend.Domain.pdb
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.csproj.AssemblyReference.cache
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.AssemblyInfoInputs.cache
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.AssemblyInfo.cs
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.sourcelink.json
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\refint\MyCloset.Backend.Domain.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\MyCloset.Backend.Domain.pdb
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Backend.Domain\obj\Debug\net8.0\ref\MyCloset.Backend.Domain.dll

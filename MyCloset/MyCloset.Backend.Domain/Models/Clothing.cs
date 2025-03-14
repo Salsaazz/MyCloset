@@ -7,7 +7,7 @@ namespace MyCloset.Backend.Domain.Models
         public uint Id { get; init; }
         public string Name { get; set; }
         public string? Store { get; set; }
-        public Color[] Colors { get; set; }
+        public List<Color> Colors { get; set; } = [];
         public Size Size { get; set; }
         private DateOnly? _date;
         public DateOnly? Date
@@ -36,7 +36,7 @@ namespace MyCloset.Backend.Domain.Models
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
 
-        public Clothing(string name, Color[] colors, Size size, Season season, double prize,
+        public Clothing(string name, List<Color> colors, Size size, Season season, double prize,
             Aesthetic aesthetic, ClothingType type, DateOnly? date)
         {
             Name = name;
