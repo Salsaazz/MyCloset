@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|..\\MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset.frontend.blazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|..\\MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset.frontend.blazor\\services\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|..\\MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset.frontend.blazor\\services\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|..\\MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset.frontend.blazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|..\\MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset.frontend.blazor\\mycloset.frontend.blazor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -158,7 +158,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 300,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -210,12 +210,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\appsettings.json",
               "RelativeDocumentMoniker": "..\\MyCloset.Frontend.Blazor\\appsettings.json",
-              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\appsettings.json*",
-              "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\appsettings.json*",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\appsettings.json",
+              "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-18T13:01:55.304Z",
@@ -249,13 +249,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RedisService.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\RedisService.cs",
               "RelativeDocumentMoniker": "..\\MyCloset.Frontend.Blazor\\Services\\RedisService.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\RedisService.cs",
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\Services\\RedisService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCcAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T14:05:17.026Z",
               "EditorCaption": ""

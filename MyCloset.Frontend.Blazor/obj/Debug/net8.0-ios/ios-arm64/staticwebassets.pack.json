@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\obj\\Debug\\net8.0-ios\\ios-arm64\\scopedcss\\bundle\\MyCloset.Frontend.Blazor.styles.css",
+      "PackagePath": "staticwebassets\\MyCloset.Frontend.Blazor.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\css\\tailwind.css",
+      "PackagePath": "staticwebassets\\css\\tailwind.css"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\ios-arm64\\staticwebassets\\msbuild.MyCloset.Frontend.Blazor.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\ios-arm64\\staticwebassets\\msbuild.MyCloset.Frontend.Blazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\ios-arm64\\staticwebassets\\msbuild.build.MyCloset.Frontend.Blazor.props",
+      "PackagePath": "build\\MyCloset.Frontend.Blazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\ios-arm64\\staticwebassets\\msbuild.buildMultiTargeting.MyCloset.Frontend.Blazor.props",
+      "PackagePath": "buildMultiTargeting\\MyCloset.Frontend.Blazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\ios-arm64\\staticwebassets\\msbuild.buildTransitive.MyCloset.Frontend.Blazor.props",
+      "PackagePath": "buildTransitive\\MyCloset.Frontend.Blazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
