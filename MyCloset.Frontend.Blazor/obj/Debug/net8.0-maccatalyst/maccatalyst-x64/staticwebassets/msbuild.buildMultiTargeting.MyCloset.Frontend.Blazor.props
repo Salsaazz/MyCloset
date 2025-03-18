@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\MyCloset.Frontend.Blazor.props" />
-</Project>

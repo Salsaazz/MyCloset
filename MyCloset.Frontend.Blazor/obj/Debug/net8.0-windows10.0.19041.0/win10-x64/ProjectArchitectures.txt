@@ -1,1 +1,0 @@
-C:\Users\salwa\Documents\MyCloset\MyCloset.Frontend.Blazor\MyCloset.Frontend.Blazor.csproj;x64
