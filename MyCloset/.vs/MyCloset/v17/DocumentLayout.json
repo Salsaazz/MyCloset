@@ -191,9 +191,9 @@
               "Title": "AddClothing.razor",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "RelativeDocumentMoniker": "..\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
-              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor*",
-              "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor*",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAYwEQAAAA4AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
+              "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
+              "ViewState": "AgIAACgAAAAAAAAAAAAowCwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-13T11:49:54.546Z",
               "EditorCaption": ""
@@ -255,8 +255,7 @@
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\wwwroot\\css\\app.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-13T11:45:47.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T11:45:47.536Z"
             },
             {
               "$type": "Document",
@@ -268,8 +267,7 @@
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\wwwroot\\css\\tailwind.css",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-13T12:39:14.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T12:39:14.31Z"
             },
             {
               "$type": "Document",
@@ -281,8 +279,7 @@
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-13T11:45:50.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T11:45:50.371Z"
             },
             {
               "$type": "Document",
@@ -294,8 +291,7 @@
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\Components\\Pages\\Counter.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T11:47:49.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T11:47:49.472Z"
             },
             {
               "$type": "Document",
@@ -307,8 +303,7 @@
               "RelativeToolTip": "..\\MyCloset.Frontend.Blazor\\Models\\Clothing.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T13:27:41.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T13:27:41.532Z"
             },
             {
               "$type": "Document",
