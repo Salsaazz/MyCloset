@@ -32,14 +32,25 @@
         </nav>
 
         <!-- Image gallery -->
-        <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="hidden size-full rounded-lg object-cover lg:block">
-            <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="aspect-3/2 w-full rounded-lg object-cover">
-                <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="aspect-3/2 w-full rounded-lg object-cover">
-            </div>
-            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto">
-        </div>
+    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+
+        @for(int i = 0; i < MAX_IMAGES; i++)
+        {
+            int index = i;
+            switch (i)
+            {
+                case 0:
+                        <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                        <img src="@RenderImage(index)" class="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto" />
+                    break;
+                default:
+                        <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                        <img src="@RenderImage(index)" class="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto" />
+                    break;
+            }               
+        }
+    </div>
+
 
         <!-- Product info -->
         <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -165,9 +176,9 @@
                                     class="sr-only">
                                     <span>
                                         @(material.ToString().ToLower()
-                                                                            .Split('_')
-                                                                            .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                            .Aggregate((a, b) => a + " " + b))
+                                                                .Split('_')
+                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -189,9 +200,9 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                    .Split('_')
-                                                                                    .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                    .Aggregate((a, b) => a + " " + b))
+                                                                .Split('_')
+                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -206,8 +217,45 @@
 
 @code {
     public Clothing _clothing = new Clothing();
-    [Inject]
-    protected IRedisService _redisService { get; set; } = default!;
+    public const int MAX_IMAGES = 3;
+    private List<string> base64Strings = new List<string>();
+    private List<Image> Images = new List<Image>();
+    private Image[] ImageArray = new Image[MAX_IMAGES];
+
+    public string RenderImage(int imageIndex)
+    {
+        if(ImageArray.Any() && ImageArray[imageIndex] is not null)
+            return $"data:{ImageArray[imageIndex].ContentType};base64,{ImageArray[imageIndex].Base64String}";
+
+        return"Images/placeholder_image.png";
+
+    }
+
+    public async Task UploadImage(InputFileChangeEventArgs eventArgs, int id)
+    {
+        try
+        {
+            var file = eventArgs.GetMultipleFiles().FirstOrDefault();
+            if (file is not null && base64Strings.Count < MAX_IMAGES)
+            {
+                var buffer = new byte[file.Size];
+                using (var stream = file.OpenReadStream())
+                {
+                    await stream.ReadAsync(buffer, 0, buffer.Length);
+                }
+
+                var base64String = Convert.ToBase64String(buffer);
+
+                ImageArray[id] = new Image(file.ContentType, file.Name, base64String);
+            } 
+        }
+        catch (Exception e)
+        {
+
+            Debug.WriteLine(e.Message);
+        }
+    }
+    
 
     public string GetColorClass(Color color)
     {
@@ -226,8 +274,6 @@
 
     public void ChooseColors(Color color)
     {
-        _redisService.GetData();
-
         if (!_clothing.Colors.Contains(color)) _clothing.Colors.Add(color);
 
         else _clothing.Colors.Remove(color);

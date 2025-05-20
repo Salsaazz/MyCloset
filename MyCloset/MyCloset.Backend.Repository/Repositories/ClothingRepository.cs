@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using MyCloset.Backend.Application.DTOs;
 using MyCloset.Backend.Domain.Models;
 using MyCloset.Backend.Infrastructure.Contexts;
@@ -10,11 +11,11 @@ namespace MyCloset.Backend.Infrastructure.Repositories
     {
         private readonly MyClosetContext _dbContext = dbContext;
 
-        public async Task AddClothing(Clothing clothing)
+        public async Task AddClothing(Clothing clothing, CancellationToken cancellationToken)
         {
             await _dbContext.Clothes
-               .AddAsync(clothing);
-            await _dbContext.SaveChangesAsync();
+               .AddAsync(clothing, cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
         public IQueryable<ClothingDTO> GetAllClothing()
@@ -31,11 +32,11 @@ namespace MyCloset.Backend.Infrastructure.Repositories
             return clothes.Any() ? clothes : Enumerable.Empty<ClothingDTO>().AsQueryable();
         }
 
-        public async Task<Clothing> GetClothingById(uint id)
+        public async Task<Clothing> GetClothingById(uint id, CancellationToken cancellationToken)
         {
             return await _dbContext.Clothes
                 .AsQueryable<Clothing>()
-                .FirstOrDefaultAsync(c => c.Id == id) ?? throw new KeyNotFoundException("Invalid id. Clothing not found.");
+                .FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new KeyNotFoundException("Invalid id. Clothing not found.");
         }
     }
 }

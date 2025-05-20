@@ -12,10 +12,12 @@ namespace MyCloset.Backend.Application.CQRS.Queries
     public class GetAllClothingQueryHandler : IRequestHandler<GetAllClothingQuery, IEnumerable<ClothingDTO>>
     {
         private readonly IClothingRepository _clothingRepo;
+
         public GetAllClothingQueryHandler(IClothingRepository clothingRepo) => _clothingRepo = clothingRepo;
 
         public async Task<IEnumerable<ClothingDTO>> Handle(GetAllClothingQuery request, CancellationToken cancellationToken)
         {
+
             return await _clothingRepo.GetAllClothing().ToListAsync(cancellationToken);
         }
     }

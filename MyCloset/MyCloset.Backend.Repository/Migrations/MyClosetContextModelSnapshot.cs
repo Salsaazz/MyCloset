@@ -60,6 +60,53 @@ namespace MyCloset.Backend.Infrastructure.Migrations
 
                     b.ToTable("Clothes");
                 });
+
+            modelBuilder.Entity("MyCloset.Backend.Domain.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<uint>("ClothingId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<byte[]>("Data")
+                        .IsRequired()
+                        .HasColumnType("BLOB");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClothingId");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.ToTable("Image");
+                });
+
+            modelBuilder.Entity("MyCloset.Backend.Domain.Models.Image", b =>
+                {
+                    b.HasOne("MyCloset.Backend.Domain.Models.Clothing", "Clothing")
+                        .WithMany("Images")
+                        .HasForeignKey("ClothingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Clothing");
+                });
+
+            modelBuilder.Entity("MyCloset.Backend.Domain.Models.Clothing", b =>
+                {
+                    b.Navigation("Images");
+                });
 #pragma warning restore 612, 618
         }
     }

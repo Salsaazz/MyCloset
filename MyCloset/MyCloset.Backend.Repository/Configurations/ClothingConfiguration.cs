@@ -35,6 +35,9 @@ namespace MyCloset.Backend.Infrastructure.Configurations
 
                 builder.Property(c => c.Type)
                     .IsRequired();
+
+                builder.Navigation(c => c.Images)
+                    .AutoInclude();
             }
         }
     }

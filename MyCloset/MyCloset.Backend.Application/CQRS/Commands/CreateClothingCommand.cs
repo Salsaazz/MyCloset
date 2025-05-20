@@ -14,10 +14,10 @@ namespace MyCloset.Backend.Application.CQRS.Commands
     {
         private readonly IClothingRepository _clothingRepo = clothingRepo;
 
-        public async Task Handle(CreateClothingCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreateClothingCommand command, CancellationToken cancellationToken)
         {
-            FormatClothingObj(request.Clothing);
-            await _clothingRepo.AddClothing(request.Clothing);
+            FormatClothingObj(command.Clothing);
+            await _clothingRepo.AddClothing(command.Clothing, cancellationToken);
         }
 
         private static void FormatClothingObj(Clothing clothing)

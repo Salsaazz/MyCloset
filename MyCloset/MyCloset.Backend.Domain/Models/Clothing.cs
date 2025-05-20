@@ -35,6 +35,18 @@ namespace MyCloset.Backend.Domain.Models
         }
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
+        private List<Image?> images = [];
+        public List<Image?> Images
+        {
+            get => images;
+            set
+            {
+                if (value.Count <= 4)
+                    images = value;
+
+                else throw new ArgumentOutOfRangeException("Too many images. Upload less than 5.");
+            }
+        }
 
         public Clothing(string name, List<Color> colors, Size size, Season season, double prize,
             Aesthetic aesthetic, ClothingType type, DateOnly? date)
@@ -47,6 +59,12 @@ namespace MyCloset.Backend.Domain.Models
             Aesthetic = aesthetic;
             Type = type;
             Date = date;
+            Images = images;
+        }
+
+        public Clothing()
+        {
+
         }
     }
 }
