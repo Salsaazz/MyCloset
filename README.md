@@ -20,6 +20,8 @@ This is a private app (single-user only) currently in early development, built w
 
 * Database: SQLite
 
+* CSS Frameowork: Tailwind(Plus)
+
 * Architecture: Clean Architecture (Separation of concerns)
 
 * Design Patterns: Repository pattern + CQRS
@@ -38,3 +40,6 @@ This is a private app (single-user only) currently in early development, built w
 * Edit & Delete clothing items
 * Search & filtering (by color, season, category, ...)
 * Outfit creation? (combine clothing items)
+
+### Usage
+PRIVATE USE ONLY (for now?)
