@@ -26,13 +26,13 @@
                 </li>
 
                 <li class="text-sm">
-                    <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+                    <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Clothing name here</a>
                 </li>
             </ol>
         </nav>
 
         <!-- Image gallery -->
-    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl grid grid-cols-3 gap-4 lg:gap-x-8 lg:px-8">
 
         @for(int i = 0; i < MAX_IMAGES; i++)
         {
@@ -40,17 +40,20 @@
             switch (i)
             {
                 case 0:
-                        <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
-                        <img src="@RenderImage(index)" class="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto" />
+                        <div>
+                            <img src="@RenderImage(index)" class="rounded-lg object-cover" />
+                            <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                        </div>
                     break;
                 default:
-                        <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
-                        <img src="@RenderImage(index)" class="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto" />
+                        <div>
+                            <img src="@RenderImage(index)" class="rounded-lg object-cover" />
+                            <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                        </div>
                     break;
             }               
         }
     </div>
-
 
         <!-- Product info -->
         <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -137,7 +140,7 @@
             </div>
             <div class="mt-10">
                 <div class="space-y-6">
-                    <p class="text-base text-gray-900">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: &quot;Black&quot;. Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+                    <p class="text-base text-gray-900">description text...</p>
                 </div>
             </div>
 
