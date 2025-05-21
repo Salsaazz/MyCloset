@@ -2,6 +2,7 @@
 @using Enums
 @using System.Diagnostics;
 @using Services;
+@inject IClothingService ClothingService;
 @page "/"
 
 <div class="bg-white">
@@ -32,28 +33,28 @@
         </nav>
 
         <!-- Image gallery -->
-    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl grid grid-cols-3 gap-4 lg:gap-x-8 lg:px-8">
+        <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl grid grid-cols-3 gap-4 lg:gap-x-8 lg:px-8">
 
-        @for(int i = 0; i < MAX_IMAGES; i++)
-        {
-            int index = i;
-            switch (i)
+            @for(int i = 0; i < MAX_IMAGES; i++)
             {
-                case 0:
+                int index = i;
+                switch (i)
+                {
+                    case 0:
                         <div>
                             <img src="@RenderImage(index)" class="rounded-lg object-cover" />
                             <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
                         </div>
-                    break;
-                default:
+                        break;
+                    default:
                         <div>
                             <img src="@RenderImage(index)" class="rounded-lg object-cover" />
                             <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
                         </div>
-                    break;
-            }               
-        }
-    </div>
+                        break;
+                }               
+            }
+        </div>
 
         <!-- Product info -->
         <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -63,7 +64,7 @@
                         Name
                     </label>
                     <InputText 
-                    @bind-Value=_clothing.Name 
+                    @bind-Value=Clothing.Name 
                     placeholder="enter name"
                     class="text-xl sm:text-2xl w-full appearance-none text-gray-900"
                     />
@@ -72,12 +73,12 @@
                     <label class="font-bold text-md sm:text-xl mr-2">
                         Store
                     </label>
-                    <InputText @bind-Value=_clothing.Store
+                    <InputText @bind-Value=Clothing.Store
                     placeholder="enter store name"
                     class="text-lg sm:text-base w-full appearance-none text-gray-900" />
                 </div>
                 <label for="date" class="font-bold text-md sm:text-xl mr-2">Date bought</label>
-                <input type="date" @bind-value=_clothing.Date>
+                <input type="date" @bind-value=Clothing.Date>
             </div>
 
             <!-- Options -->
@@ -85,7 +86,7 @@
                 <h2 class="sr-only">Product information</h2>
                 <div class="flex flex-row text-2xl sm:text-3xl gap-1">
                     <p>€</p>
-                    <InputNumber @bind-Value=_clothing.Prize
+                    <InputNumber @bind-Value=Clothing.Prize
                     placeholder="0"
                     class="w-full appearance-none text-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                     min=0 />
@@ -129,7 +130,7 @@
                 <div class="mt-10">
                     <h3 class="text-md font-medium text-gray-900">Size</h3>
                     <div class="mt-4">
-                        <InputSelect @bind-Value="_clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
+                        <InputSelect @bind-Value="Clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
                             @foreach (var size in Enum.GetValues(typeof(Size)))
                             {
                                 <option value=@size>@size</option>
@@ -179,9 +180,9 @@
                                     class="sr-only">
                                     <span>
                                         @(material.ToString().ToLower()
-                                                                .Split('_')
-                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                .Aggregate((a, b) => a + " " + b))
+                                                                                                        .Split('_')
+                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -203,15 +204,15 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                .Split('_')
-                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                .Aggregate((a, b) => a + " " + b))
+                                                                                                        .Split('_')
+                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
                         </div>
                     </fieldset>
-                    <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">Submit</button>
+                    <button type="submit" @onclick="CreateNewClothing" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">Submit</button>
                 </div>
             </div>
         </div>
@@ -219,16 +220,32 @@
 </div>
 
 @code {
-    public Clothing _clothing = new Clothing();
+    public CreateClothingDTO Clothing = new CreateClothingDTO();
     public const int MAX_IMAGES = 3;
-    private List<string> base64Strings = new List<string>();
-    private List<Image> Images = new List<Image>();
-    private Image[] ImageArray = new Image[MAX_IMAGES];
+    public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
+    public bool ShowError;
+    public string? ErrorMessage;
+
+    public async Task CreateNewClothing()
+    {
+        if(Images.Any())
+            Clothing.Images = new List<CreateImageDTO>(Images)!;
+
+        try        
+        {
+            await ClothingService.AddClothing(Clothing);
+        }
+        catch (Exception e)
+        {
+            ShowError = true;
+            ErrorMessage = e.Message;
+        }
+    }
 
     public string RenderImage(int imageIndex)
     {
-        if(ImageArray.Any() && ImageArray[imageIndex] is not null)
-            return $"data:{ImageArray[imageIndex].ContentType};base64,{ImageArray[imageIndex].Base64String}";
+        if(Images.Any() && Images[imageIndex] is not null)
+            return $"data:{Images[imageIndex].ContentType};base64,{Images[imageIndex].Data}";
 
         return"Images/placeholder_image.png";
 
@@ -239,7 +256,7 @@
         try
         {
             var file = eventArgs.GetMultipleFiles().FirstOrDefault();
-            if (file is not null && base64Strings.Count < MAX_IMAGES)
+            if (file is not null)
             {
                 var buffer = new byte[file.Size];
                 using (var stream = file.OpenReadStream())
@@ -249,7 +266,7 @@
 
                 var base64String = Convert.ToBase64String(buffer);
 
-                ImageArray[id] = new Image(file.ContentType, file.Name, base64String);
+                Images[id] = new CreateImageDTO(base64String, file.ContentType, file.ContentType);
             } 
         }
         catch (Exception e)
@@ -263,7 +280,7 @@
     public string GetColorClass(Color color)
     {
         var baseClasses = "size-8 rounded-full border border-black/10 relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-hidden";
-        bool isSelected = _clothing.Colors.Contains(color);
+        bool isSelected = Clothing.Colors.Contains(color);
 
         return color switch
         {
@@ -277,9 +294,9 @@
 
     public void ChooseColors(Color color)
     {
-        if (!_clothing.Colors.Contains(color)) _clothing.Colors.Add(color);
+        if (!Clothing.Colors.Contains(color)) Clothing.Colors.Add(color);
 
-        else _clothing.Colors.Remove(color);
+        else Clothing.Colors.Remove(color);
 
         StateHasChanged();
     }
@@ -289,16 +306,16 @@
         switch (property)
         {
             case Aesthetic aesthetic:
-                _clothing.Aesthetic = aesthetic;
+                Clothing.Aesthetic = aesthetic;
                 break;
             case Material material:
-                _clothing.Material = material;
+                Clothing.Material = material;
                 break;
             case Season season:
-                _clothing.Season = season;
+                Clothing.Season = season;
                 break;
             case ClothingType clothingType:
-                _clothing.Type = clothingType;
+                Clothing.Type = clothingType;
                 break;
         }
 
@@ -311,20 +328,19 @@
 
         return property switch
         {
-            Aesthetic aesthetic => _clothing.Aesthetic == aesthetic ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
-            Material material => _clothing.Material == material ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            Aesthetic aesthetic => Clothing.Aesthetic == aesthetic ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            Material material => Clothing.Material == material ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
             Season season => $"{GetSeasonColor(season)}",
-            ClothingType clothingType => _clothing.Type == clothingType ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            ClothingType clothingType => Clothing.Type == clothingType ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
             _ => baseClass
         };
     }
 
     private string GetSeasonColor(Season season)
     {
-        var isSelected = _clothing.Season == season;
+        var isSelected = Clothing.Season == season;
         const string baseClass = "border-1 border-gray-500 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs font-medium text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
 
-        Debug.WriteLine(_clothing.Date);
         return season switch
         {
             Season.FALL => isSelected ? $"{baseClass} bg-amber-300" : $"{baseClass} bg-amber-500 hover:bg-amber-300",

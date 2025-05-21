@@ -23,7 +23,7 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
         builder.Services.AddMauiBlazorWebView();
-        builder.Services.AddScoped<IRedisService, RedisService>();
+        builder.Services.AddScoped<IClothingService, ClothingService>();
         builder.Configuration.AddConfiguration(config);
 
 #if DEBUG

@@ -9,7 +9,7 @@ namespace MyCloset.Backend.WebAPI.Controllers
     public class ImageController(IMediator mediator) : IApiController(mediator)
     {
         [HttpPost]
-        public async Task<IActionResult> PostImages([FromQuery] uint clothingId, [FromBody] List<UploadImageDTO> images)
+        public async Task<IActionResult> PostImages([FromQuery] uint clothingId, [FromBody] List<CreateImageDTO> images)
         {
             try
             {

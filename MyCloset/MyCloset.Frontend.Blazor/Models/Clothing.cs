@@ -12,5 +12,7 @@
         public double Prize { get; set; }
         public Enums.Aesthetic Aesthetic { get; set; }
         public Enums.ClothingType Type { get; set; }
+
+        public List<Image?> Images = [];
     }
 }

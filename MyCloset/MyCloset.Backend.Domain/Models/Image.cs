@@ -1,4 +1,6 @@
-﻿namespace MyCloset.Backend.Domain.Models
+﻿using MyCloset.Backend.Domain.DTOs;
+
+namespace MyCloset.Backend.Domain.Models
 {
     public class Image(byte[] data, string contentType, string fileName)
     {

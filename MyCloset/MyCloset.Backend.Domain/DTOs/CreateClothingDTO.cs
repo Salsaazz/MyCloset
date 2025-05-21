@@ -1,8 +1,8 @@
 ﻿using MyCloset.Backend.Domain.Enum;
 
-namespace MyCloset.Backend.Domain.Models
+namespace MyCloset.Backend.Domain.DTOs
 {
-    public class Clothing
+    public class CreateClothingDTO
     {
         public uint Id { get; init; }
         public string Name { get; set; }
@@ -35,8 +35,8 @@ namespace MyCloset.Backend.Domain.Models
         }
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
-        private List<Image?> images = [];
-        public List<Image?> Images
+        private List<CreateImageDTO?> images = [];
+        public List<CreateImageDTO?> Images
         {
             get => images;
             set
@@ -44,12 +44,12 @@ namespace MyCloset.Backend.Domain.Models
                 if (value.Count <= 3)
                     images = value;
 
-                else throw new ArgumentOutOfRangeException("Too many images. Upload less than 5.");
+                else throw new ArgumentOutOfRangeException("Too many images. Upload less than 4.");
             }
         }
 
-        public Clothing(string name, List<Color> colors, Size size, Season season, double prize,
-            Aesthetic aesthetic, ClothingType type, DateOnly? date)
+        public CreateClothingDTO(string name, List<Color> colors, Size size, Season season, double prize,
+            Aesthetic aesthetic, ClothingType type, DateOnly? date, List<CreateImageDTO?>? images)
         {
             Name = name;
             Colors = colors;
@@ -59,12 +59,7 @@ namespace MyCloset.Backend.Domain.Models
             Aesthetic = aesthetic;
             Type = type;
             Date = date;
-            Images = images;
-        }
-
-        public Clothing()
-        {
-
+            Images = images!;
         }
     }
 }
