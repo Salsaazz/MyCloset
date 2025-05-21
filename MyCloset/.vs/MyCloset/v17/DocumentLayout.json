@@ -156,7 +156,7 @@
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAB8AAAAAAAAAA==",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAAAPQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-08T13:30:09.147Z",
               "EditorCaption": ""
@@ -171,8 +171,7 @@
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Models\\Image.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T12:00:50.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T12:00:50.005Z"
             },
             {
               "$type": "Document",
