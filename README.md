@@ -3,7 +3,7 @@
 
 
 ## 📌 Overview
-Virtual Closet is a personal clothing inventory app that functions as a digital wardrobe. It allows you to:
+MyCloset is a personal clothing inventory app that functions as a digital wardrobe. It allows you to:
 
 * View your clothing items in a virtual closet
 
@@ -40,6 +40,3 @@ This is a private app (single-user only) currently in early development, built w
 * Edit & Delete clothing items
 * Search & filtering (by color, season, category, ...)
 * Outfit creation? (combine clothing items)
-
-### Usage
-PRIVATE USE ONLY (for now?)
