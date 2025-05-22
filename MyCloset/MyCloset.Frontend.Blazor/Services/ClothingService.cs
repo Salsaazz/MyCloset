@@ -5,13 +5,20 @@ namespace MyCloset.Frontend.Blazor.Services
 {
     public class ClothingService : IClothingService
     {
-        public async Task AddClothing(CreateClothingDTO clothing)
+        public async Task<HttpResponseMessage> AddClothing(CreateClothingDTO clothing)
         {
-
-            HttpClient client = new HttpClient();
+            using HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7254");
 
-            var result = await client.PostAsJsonAsync("/Clothing", clothing);
+            HttpResponseMessage response = await client.PostAsJsonAsync("/Clothing", clothing);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                string errorContent = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException($"API Error ({(int)response.StatusCode}): {errorContent}");
+            }
+
+            return response;
         }
     }
 }

@@ -3,6 +3,7 @@
 @using System.Diagnostics;
 @using Services;
 @inject IClothingService ClothingService;
+@inject NavigationManager uriHelper;
 @page "/"
 
 <div class="bg-white">
@@ -64,7 +65,7 @@
                         Name
                     </label>
                     <InputText 
-                    @bind-Value=Clothing.Name 
+                    @bind-value=Clothing.Name 
                     placeholder="enter name"
                     class="text-xl sm:text-2xl w-full appearance-none text-gray-900"
                     />
@@ -73,7 +74,7 @@
                     <label class="font-bold text-md sm:text-xl mr-2">
                         Store
                     </label>
-                    <InputText @bind-Value=Clothing.Store
+                    <InputText @bind-value=Clothing.Store
                     placeholder="enter store name"
                     class="text-lg sm:text-base w-full appearance-none text-gray-900" />
                 </div>
@@ -86,7 +87,7 @@
                 <h2 class="sr-only">Product information</h2>
                 <div class="flex flex-row text-2xl sm:text-3xl gap-1">
                     <p>€</p>
-                    <InputNumber @bind-Value=Clothing.Prize
+                    <InputNumber @bind-value=Clothing.Prize
                     placeholder="0"
                     class="w-full appearance-none text-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                     min=0 />
@@ -130,7 +131,7 @@
                 <div class="mt-10">
                     <h3 class="text-md font-medium text-gray-900">Size</h3>
                     <div class="mt-4">
-                        <InputSelect @bind-Value="Clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
+                        <InputSelect @bind-value="Clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
                             @foreach (var size in Enum.GetValues(typeof(Size)))
                             {
                                 <option value=@size>@size</option>
@@ -180,9 +181,9 @@
                                     class="sr-only">
                                     <span>
                                         @(material.ToString().ToLower()
-                                                                                                        .Split('_')
-                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                        .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                        .Split('_')
+                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -204,15 +205,27 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                                        .Split('_')
-                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                        .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                        .Split('_')
+                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
                         </div>
                     </fieldset>
                     <button type="submit" @onclick="CreateNewClothing" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">Submit</button>
+                    @if (ShowError)
+                    {
+                        <div class=" mt-3 flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium"></span> @ErrorMessage
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -225,20 +238,35 @@
     public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
     public bool ShowError;
     public string? ErrorMessage;
+    // max size 2GB
+    private const uint MAX_FILE_SIZE = 200000000;
 
     public async Task CreateNewClothing()
     {
-        if(Images.Any())
+        if (Images.Any())
             Clothing.Images = new List<CreateImageDTO>(Images)!;
 
-        try        
+        try
         {
-            await ClothingService.AddClothing(Clothing);
+            var result = await ClothingService.AddClothing(Clothing);
+
+            if (result.IsSuccessStatusCode)
+            {
+                RefreshPage();
+            }
+            else
+            {
+                string errorContent = await result.Content.ReadAsStringAsync();
+                SetError(errorContent, true, (int)result.StatusCode);
+            }
         }
-        catch (Exception e)
+        catch (HttpRequestException ex)
         {
-            ShowError = true;
-            ErrorMessage = e.Message;
+            SetError(ex.Message, true, null);
+        }
+        catch (Exception ex)
+        {
+            SetError(ex.Message, true, null);
         }
     }
 
@@ -256,7 +284,7 @@
         try
         {
             var file = eventArgs.GetMultipleFiles().FirstOrDefault();
-            if (file is not null)
+            if (file is not null && file.Size <= MAX_FILE_SIZE)
             {
                 var buffer = new byte[file.Size];
                 using (var stream = file.OpenReadStream())
@@ -267,15 +295,18 @@
                 var base64String = Convert.ToBase64String(buffer);
 
                 Images[id] = new CreateImageDTO(base64String, file.ContentType, file.ContentType);
-            } 
+            }
+            else
+            {
+                SetError("File unvalid. Try file less or equal than 2GB", false, null);
+            }
         }
         catch (Exception e)
         {
-
-            Debug.WriteLine(e.Message);
+            SetError(e.Message, true, null);
         }
     }
-    
+
 
     public string GetColorClass(Color color)
     {
@@ -351,5 +382,23 @@
         };
     }
 
+    private void RefreshPage()
+    {
+        Task.Delay(2000);
+        uriHelper.NavigateTo(uriHelper.Uri, forceLoad: true);
+    }
+
+    private void SetError(string errorMessage, bool isHttpMessage, int? statusCode)
+    {
+        ShowError = true;
+    
+        var processedMessage = isHttpMessage 
+            ? errorMessage.Split('\n').FirstOrDefault()?.Trim() 
+            : errorMessage;
+    
+        ErrorMessage = statusCode.HasValue
+            ? $" ({statusCode}): {processedMessage}"
+            : $" {processedMessage}";
+    }
 }
 

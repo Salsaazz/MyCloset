@@ -1,17 +1,21 @@
-﻿namespace MyCloset.Frontend.Blazor.Models
+﻿using MyCloset.Frontend.Blazor.Enums;
+using Color = MyCloset.Frontend.Blazor.Enums.Color;
+using Size = MyCloset.Frontend.Blazor.Enums.Size;
+
+namespace MyCloset.Frontend.Blazor.Models
 {
     public class Clothing
     {
         public string Name { get; set; }
         public string? Store { get; set; }
-        public List<Enums.Color> Colors { get; set; } = [];
-        public Enums.Size Size { get; set; }
-        public Enums.Material Material { get; set; }
+        public List<Color> Colors { get; set; } = [];
+        public Size Size { get; set; }
+        public Material Material { get; set; }
         public DateOnly? Date { get; set; }
-        public Enums.Season Season { get; set; }
+        public Season Season { get; set; }
         public double Prize { get; set; }
-        public Enums.Aesthetic Aesthetic { get; set; }
-        public Enums.ClothingType Type { get; set; }
+        public Aesthetic Aesthetic { get; set; }
+        public ClothingType Type { get; set; }
 
         public List<Image?> Images = [];
     }

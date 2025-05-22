@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\services\\clothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\services\\clothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\components\\pages\\addclothing.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\components\\pages\\addclothing.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\dtos\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\dtos\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCADA828-12B1-4FD6-A628-20268AFD5BFA}|MyCloset.Backend.WebAPI\\MyCloset.Backend.WebAPI.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.webapi\\controllers\\clothingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCADA828-12B1-4FD6-A628-20268AFD5BFA}|MyCloset.Backend.WebAPI\\MyCloset.Backend.WebAPI.csproj|solutionrelative:mycloset.backend.webapi\\controllers\\clothingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\services\\iclothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\services\\iclothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\dtos\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\dtos\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\enum\\clothingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\enum\\clothingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.application\\cqrs\\commands\\createclothingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|solutionrelative:mycloset.backend.application\\cqrs\\commands\\createclothingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\dtos\\clothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\dtos\\clothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DD29AEA6-26BB-4048-93EB-1F72FEF689D2}|MyCloset.Backend.Repository\\MyCloset.Backend.Infrastructure.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.repository\\repositories\\imagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD29AEA6-26BB-4048-93EB-1F72FEF689D2}|MyCloset.Backend.Repository\\MyCloset.Backend.Infrastructure.csproj|solutionrelative:mycloset.backend.repository\\repositories\\imagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,48 +67,12 @@
       "RelativeMoniker": "D:0:0:{DD29AEA6-26BB-4048-93EB-1F72FEF689D2}|MyCloset.Backend.Repository\\MyCloset.Backend.Infrastructure.csproj|solutionrelative:mycloset.backend.repository\\repositories\\clothingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.application\\cqrs\\commands\\createclothingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|solutionrelative:mycloset.backend.application\\cqrs\\commands\\createclothingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCADA828-12B1-4FD6-A628-20268AFD5BFA}|MyCloset.Backend.WebAPI\\MyCloset.Backend.WebAPI.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.webapi\\controllers\\clothingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCADA828-12B1-4FD6-A628-20268AFD5BFA}|MyCloset.Backend.WebAPI\\MyCloset.Backend.WebAPI.csproj|solutionrelative:mycloset.backend.webapi\\controllers\\clothingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\dtos\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\dtos\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\services\\clothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\services\\clothingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\components\\pages\\addclothing.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\components\\pages\\addclothing.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\createclothingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\createimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.domain\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1FCDC80-2EB1-481F-9C5F-4764DB743B89}|MyCloset.Backend.Domain\\MyCloset.Backend.Domain.csproj|solutionrelative:mycloset.backend.domain\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.backend.application\\cqrs\\commands\\uploadimagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE0F1DE6-BE6F-4CA3-B519-9E0808DB211F}|MyCloset.Backend.Application\\MyCloset.Backend.Application.csproj|solutionrelative:mycloset.backend.application\\cqrs\\commands\\uploadimagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|c:\\users\\salwa\\documents\\mycloset\\mycloset\\mycloset.frontend.blazor\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C767B7FD-06E3-4082-A1BC-289F0FBD2101}|MyCloset.Frontend.Blazor\\MyCloset.Frontend.Blazor.csproj|solutionrelative:mycloset.frontend.blazor\\models\\clothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1072,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,13 +94,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
+              "Title": "IClothingService.cs",
+              "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\IClothingService.cs",
+              "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Services\\IClothingService.cs",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\IClothingService.cs",
+              "RelativeToolTip": "MyCloset.Frontend.Blazor\\Services\\IClothingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:23:38.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\Models\\Image.cs",
+              "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\Models\\Image.cs",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\Models\\Image.cs",
+              "RelativeToolTip": "MyCloset.Backend.Domain\\Models\\Image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:35:20.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateImageDTO.cs",
+              "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\CreateImageDTO.cs",
+              "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\DTOs\\CreateImageDTO.cs",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\CreateImageDTO.cs",
+              "RelativeToolTip": "MyCloset.Backend.Domain\\DTOs\\CreateImageDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:24:32.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ClothingDTO.cs",
+              "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\ClothingDTO.cs",
+              "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\DTOs\\ClothingDTO.cs",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\ClothingDTO.cs",
+              "RelativeToolTip": "MyCloset.Backend.Domain\\DTOs\\ClothingDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:24:20.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClothingType.cs",
+              "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\Enum\\ClothingType.cs",
+              "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\Enum\\ClothingType.cs",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\Enum\\ClothingType.cs",
+              "RelativeToolTip": "MyCloset.Backend.Domain\\Enum\\ClothingType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:24:16.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CreateClothingDTO.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\CreateClothingDTO.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\DTOs\\CreateClothingDTO.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\DTOs\\CreateClothingDTO.cs",
               "RelativeToolTip": "MyCloset.Backend.Domain\\DTOs\\CreateClothingDTO.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAADgvzIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T17:00:54.149Z",
               "EditorCaption": ""
@@ -93,14 +178,14 @@
               "RelativeDocumentMoniker": "MyCloset.Backend.Domain\\Models\\Clothing.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Domain\\Models\\Clothing.cs",
               "RelativeToolTip": "MyCloset.Backend.Domain\\Models\\Clothing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAwAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:23:51.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ClothingController.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.WebAPI\\Controllers\\ClothingController.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.WebAPI\\Controllers\\ClothingController.cs",
@@ -113,20 +198,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 14,
               "Title": "ImageRepository.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Repository\\Repositories\\ImageRepository.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.Repository\\Repositories\\ImageRepository.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Repository\\Repositories\\ImageRepository.cs",
               "RelativeToolTip": "MyCloset.Backend.Repository\\Repositories\\ImageRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwB0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:17:30.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "UploadImageCommand.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Application\\CQRS\\Commands\\UploadImageCommand.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.Application\\CQRS\\Commands\\UploadImageCommand.cs",
@@ -134,38 +219,37 @@
               "RelativeToolTip": "MyCloset.Backend.Application\\CQRS\\Commands\\UploadImageCommand.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAwwBkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:15:03.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:15:03.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ClothingService.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\ClothingService.cs",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Services\\ClothingService.cs",
-              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\ClothingService.cs",
-              "RelativeToolTip": "MyCloset.Frontend.Blazor\\Services\\ClothingService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAADwvw0AAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Services\\ClothingService.cs*",
+              "RelativeToolTip": "MyCloset.Frontend.Blazor\\Services\\ClothingService.cs*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:07:42.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "CreateClothingCommand.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Application\\CQRS\\Commands\\CreateClothingCommand.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.Application\\CQRS\\Commands\\CreateClothingCommand.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Application\\CQRS\\Commands\\CreateClothingCommand.cs",
               "RelativeToolTip": "MyCloset.Backend.Application\\CQRS\\Commands\\CreateClothingCommand.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAlwDYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:07:42.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "ClothingRepository.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Backend.Repository\\Repositories\\ClothingRepository.cs",
               "RelativeDocumentMoniker": "MyCloset.Backend.Repository\\Repositories\\ClothingRepository.cs",
@@ -178,20 +262,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "Clothing.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\Clothing.cs",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Models\\Clothing.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\Clothing.cs",
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Models\\Clothing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:09:53.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "CreateImageDTO.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\CreateImageDTO.cs",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Models\\CreateImageDTO.cs",
@@ -204,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Image.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\Image.cs",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Models\\Image.cs",
@@ -212,31 +296,30 @@
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Models\\Image.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:09:02.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:09:02.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AddClothing.razor",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Components\\Pages\\AddClothing.razor",
-              "ViewState": "AgIAAOMAAAAAAAAAAAAjwOwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHsBAAAAAAAAAAAAANgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-21T16:08:02.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "CreateClothingDTO.cs",
               "DocumentMoniker": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\CreateClothingDTO.cs",
               "RelativeDocumentMoniker": "MyCloset.Frontend.Blazor\\Models\\CreateClothingDTO.cs",
               "ToolTip": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.Blazor\\Models\\CreateClothingDTO.cs",
               "RelativeToolTip": "MyCloset.Frontend.Blazor\\Models\\CreateClothingDTO.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wBUAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T15:54:06.811Z",
               "EditorCaption": ""
