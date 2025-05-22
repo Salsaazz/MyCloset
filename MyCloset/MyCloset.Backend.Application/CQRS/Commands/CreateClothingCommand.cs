@@ -33,11 +33,17 @@ namespace MyCloset.Backend.Application.CQRS.Commands
         private static List<Image> ConvertUploadImageDTOsToImages(List<CreateImageDTO> imageDTOs)
         {
             List<Image> images = [];
+            const uint MAX_FILE_SIZE = 2000000000; // 2GB in bytes
 
             foreach (var imageDTO in imageDTOs)
             {
                 if (imageDTO is not null)
                 {
+                    if (imageDTO.Data.Length > MAX_FILE_SIZE)
+                    {
+                        throw new ArgumentException($"File size exceeds maximum limit of 2GB. Current size: {imageDTO.Data.Length / 1024 / 1024}MB");
+                    }
+
                     byte[] byteArray = Convert.FromBase64String(imageDTO.Data);
                     images.Add(new Image(byteArray, imageDTO.ContentType, imageDTO.FileName));
                 }
@@ -53,7 +59,7 @@ namespace MyCloset.Backend.Application.CQRS.Commands
                 images = ConvertUploadImageDTOsToImages(clothingDTO.Images!)!;
 
             return new Clothing(
-                clothingDTO.Name, clothingDTO.Colors, clothingDTO.Size,
+                clothingDTO.Name, clothingDTO.Colors, clothingDTO.Store, clothingDTO.Size,
                 clothingDTO.Season, clothingDTO.Prize, clothingDTO.Aesthetic,
                 clothingDTO.Type, clothingDTO.Date)
             { Images = images };

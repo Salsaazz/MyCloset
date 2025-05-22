@@ -9,8 +9,8 @@ namespace MyCloset.Backend.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Image> builder)
         {
             builder.HasKey(i => i.Id);
-            builder.HasIndex(i => i.Id)
-                .IsUnique();
+            builder.Property(i => i.Id)
+                .ValueGeneratedOnAdd();
 
             builder.Property(i => i.FileName)
                 .IsRequired();

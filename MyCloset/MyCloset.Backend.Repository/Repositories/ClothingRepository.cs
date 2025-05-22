@@ -16,11 +16,6 @@ namespace MyCloset.Backend.Infrastructure.Repositories
             var addedClothing = await _dbContext.Clothes
                .AddAsync(clothing, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-
-            if (clothing.Images.Count != 0)
-                await _imageRepo.UploadImagesByClothingId(clothing.Images!, addedClothing.Entity.Id, cancellationToken);
-
-            await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
         public IQueryable<ClothingDTO> GetAllClothing()

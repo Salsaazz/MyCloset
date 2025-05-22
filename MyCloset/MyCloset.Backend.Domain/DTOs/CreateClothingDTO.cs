@@ -48,11 +48,12 @@ namespace MyCloset.Backend.Domain.DTOs
             }
         }
 
-        public CreateClothingDTO(string name, List<Color> colors, Size size, Season season, double prize,
+        public CreateClothingDTO(string name, List<Color> colors, string store, Size size, Season season, double prize,
             Aesthetic aesthetic, ClothingType type, DateOnly? date, List<CreateImageDTO?>? images)
         {
             Name = name;
             Colors = colors;
+            Store = store;
             Size = size;
             Season = season;
             Prize = prize;
