@@ -18,7 +18,7 @@ namespace MyCloset.Backend.Domain.DTOs
             }
         }
         public string FileName { get; set; }
-        private static readonly string[] allowedExtensions = ["image/jpeg", "image/jpg", "image/png", "application/pdf"];
+        private static readonly string[] allowedExtensions = ["image/jpeg", "image/jpg", "image/png"];
 
         public CreateImageDTO(string data, string contentType, string fileName)
         {

@@ -56,13 +56,13 @@
                     case 0:
                         <div>
                             <img src="@RenderImage(index)" class="h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
-                            <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                            <InputFile accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
                         </div>
                         break;
                     default:
                         <div>
                             <img src="@RenderImage(index)" class="h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
-                            <InputFile accept="image/*" OnChange="(ev) =>UploadImage(ev, index)" />
+                            <InputFile accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
                         </div>
                         break;
                 }               
@@ -193,9 +193,9 @@
                                     class="sr-only">
                                     <span>
                                         @(material.ToString().ToLower()
-                                                                                                                                                                                            .Split('_')
-                                                                                                                                                                                            .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                            .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                                                .Split('_')
+                                                                                                                                                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                                                .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -217,9 +217,9 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                                                                                                                            .Split('_')
-                                                                                                                                                                                            .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                            .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                                                .Split('_')
+                                                                                                                                                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                                                .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -245,6 +245,7 @@
 </div>
 
 @code {
+
     public CreateClothingDTO Clothing = new CreateClothingDTO();
     public const int MAX_IMAGES = 3;
     public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
@@ -253,6 +254,7 @@
     public string? ErrorMessage;
     // max size 2GB
     private const uint MAX_FILE_SIZE = 200000000;
+    private const string ALLOWED_IMG_EXTENSIONS = "img/jpeg, img/jpg, img/png"; 
 
     public async Task CreateNewClothing()
     {
