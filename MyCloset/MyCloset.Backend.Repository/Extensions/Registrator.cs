@@ -23,6 +23,7 @@ namespace MyCloset.Backend.Infrastructure.Extensions
         private static void RegisterRepositories(this IServiceCollection services)
         {
             services.AddScoped<IClothingRepository, ClothingRepository>();
+            services.AddScoped<IImageRepository, ImageRepository>();
         }
     }
 }

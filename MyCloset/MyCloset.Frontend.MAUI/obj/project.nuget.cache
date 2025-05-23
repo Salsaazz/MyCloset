@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IxTdgYsqJjg=",
+  "dgSpecHash": "JIvHCeC6ceY=",
   "success": true,
   "projectFilePath": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.MAUI\\MyCloset.Frontend.MAUI.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,7 @@
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.graphics\\8.0.100\\microsoft.maui.graphics.8.0.100.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\8.0.100\\microsoft.maui.graphics.win2d.winui.desktop.8.0.100.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\microsoft.maui.resizetizer.8.0.100.nupkg.sha512",
-    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.13\\microsoft.net.illink.tasks.8.0.13.nupkg.sha512",
+    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.16\\microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240802000\\microsoft.windowsappsdk.1.5.240802000.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",

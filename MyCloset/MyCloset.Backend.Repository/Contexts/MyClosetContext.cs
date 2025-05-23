@@ -11,6 +11,7 @@ namespace MyCloset.Backend.Infrastructure.Contexts
         {
         }
         public required DbSet<Clothing> Clothes { get; init; }
+        public required DbSet<Image> Images { get; init; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
