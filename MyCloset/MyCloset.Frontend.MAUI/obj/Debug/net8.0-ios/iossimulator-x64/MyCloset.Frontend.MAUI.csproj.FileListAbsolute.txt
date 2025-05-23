@@ -1,10 +1,3 @@
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualBasic.Core.dll
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.iOS.dll
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.Globalization.Native.dylib
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libicuuc.a
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmonosgen-2.0.a
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-debug.dylib
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\MyCloset.Frontend.MAUI.runtimeconfig.json
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\MyCloset.Frontend.MAUI.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\MyCloset.Frontend.MAUI.pdb
@@ -152,6 +145,7 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\zh-Hans\Microsoft.Maui.Controls.resources.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\zh-Hant\Microsoft.Maui.Controls.resources.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.CSharp.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualBasic.Core.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualBasic.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Win32.Primitives.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Win32.Registry.dll
@@ -314,6 +308,7 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\WindowsBase.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\mscorlib.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\netstandard.dll
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.iOS.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\System.Private.CoreLib.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\icudt.dat
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\icudt_CJK.dat
@@ -321,6 +316,7 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\icudt_hybrid.dat
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\icudt_no_CJK.dat
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.Globalization.Native.a
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.Globalization.Native.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.IO.Compression.Native.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.IO.Compression.Native.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.Native.a
@@ -331,6 +327,7 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libSystem.Security.Cryptography.Native.Apple.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libicudata.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libicui18n.a
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libicuuc.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-debugger-static.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-debugger-stub-static.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-debugger.dylib
@@ -343,12 +340,15 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-marshal-ilgen-static.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-marshal-ilgen-stub-static.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmono-component-marshal-ilgen.dylib
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmonosgen-2.0.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libmonosgen-2.0.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.iOS.registrar.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libextension-dotnet.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-debug.a
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-debug.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot-debug.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
@@ -358,9 +358,9 @@ C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.inputs
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiInfo.plist
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiSplash.storyboard
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449.png
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
-C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_AEA2C6453BCEF6974FC905214757F59B0359A249ADE416BF7374410B718EF900.png
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_AEA2C6453BCEF6974FC905214757F59B0359A249ADE416BF7374410B718EF900@2x.png
+C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_AEA2C6453BCEF6974FC905214757F59B0359A249ADE416BF7374410B718EF900@3x.png
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.stamp
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\salwa\Documents\MyCloset\MyCloset\MyCloset.Frontend.MAUI\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png

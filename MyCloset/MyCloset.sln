@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Backend.WebAPI", "MyCloset.Backend.WebAPI\MyCloset.Backend.WebAPI.csproj", "{BCADA828-12B1-4FD6-A628-20268AFD5BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Frontend.Blazor", "..\MyCloset.Frontend.Blazor\MyCloset.Frontend.Blazor.csproj", "{C767B7FD-06E3-4082-A1BC-289F0FBD2101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCloset.Frontend.Blazor", "MyCloset.Frontend.Blazor\MyCloset.Frontend.Blazor.csproj", "{C767B7FD-06E3-4082-A1BC-289F0FBD2101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

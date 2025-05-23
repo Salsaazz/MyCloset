@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyCloset.Backend.Application.CQRS.Commands;
 using MyCloset.Backend.Application.CQRS.Queries;
-using MyCloset.Backend.Domain.Models;
+using MyCloset.Backend.Domain.DTOs;
 using MyCloset.Backend.WebAPI.Controllers.Interfaces;
 
 namespace MyCloset.Backend.WebAPI.Controllers
@@ -40,7 +40,7 @@ namespace MyCloset.Backend.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddClothing([FromBody] Clothing clothing)
+        public async Task<IActionResult> AddClothing([FromBody] CreateClothingDTO clothing)
         {
             try
             {

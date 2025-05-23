@@ -9,9 +9,9 @@ namespace MyCloset.Backend.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Clothing> builder)
         {
             {
-                builder.HasKey(c => c.Id);
-                builder.HasIndex(c => c.Id)
-                    .IsUnique();
+                builder.HasKey(i => i.Id);
+                builder.Property(i => i.Id)
+                    .ValueGeneratedOnAdd();
 
 
                 builder.Property(c => c.Name)
@@ -35,6 +35,9 @@ namespace MyCloset.Backend.Infrastructure.Configurations
 
                 builder.Property(c => c.Type)
                     .IsRequired();
+
+                builder.Navigation(c => c.Images)
+                    .AutoInclude();
             }
         }
     }

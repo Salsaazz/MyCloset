@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ENE1+aeGpro=",
+  "dgSpecHash": "JIvHCeC6ceY=",
   "success": true,
   "projectFilePath": "C:\\Users\\salwa\\Documents\\MyCloset\\MyCloset\\MyCloset.Frontend.MAUI\\MyCloset.Frontend.MAUI.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,7 @@
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.graphics\\8.0.100\\microsoft.maui.graphics.8.0.100.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\8.0.100\\microsoft.maui.graphics.win2d.winui.desktop.8.0.100.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\microsoft.maui.resizetizer.8.0.100.nupkg.sha512",
-    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.14\\microsoft.net.illink.tasks.8.0.14.nupkg.sha512",
+    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.16\\microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240802000\\microsoft.windowsappsdk.1.5.240802000.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
@@ -154,8 +154,8 @@
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.android.ref.34\\34.0.147\\microsoft.android.ref.34.34.0.147.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.android.runtime.34.android-arm\\34.0.147\\microsoft.android.runtime.34.android-arm.34.0.147.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.android.runtime.34.android-x86\\34.0.147\\microsoft.android.runtime.34.android-x86.34.0.147.nupkg.sha512",
-    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.ios.runtime.ios-arm64.net8.0_18.0\\18.0.8319\\microsoft.ios.runtime.ios-arm64.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.ios.ref.net8.0_18.0\\18.0.8319\\microsoft.ios.ref.net8.0_18.0.18.0.8319.nupkg.sha512",
+    "C:\\Users\\salwa\\.nuget\\packages\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0\\18.0.8319\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0\\18.0.8319\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.maccatalyst.ref.net8.0_18.0\\18.0.8319\\microsoft.maccatalyst.ref.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\salwa\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"

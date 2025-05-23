@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using MyCloset.Frontend.Blazor.Services;
+using System.Reflection;
 
 namespace MyCloset.Frontend.Blazor;
 
@@ -7,15 +10,21 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+        var a = Assembly.GetExecutingAssembly();
+        using var stream = a.GetManifestResourceStream("MyCloset.Frontend.Blazor.appsettings.json");
+        var config = new ConfigurationBuilder()
+                            .AddJsonFile("appsettings.json")
+                            .Build();
+
         builder
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
-
         builder.Services.AddMauiBlazorWebView();
-        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7254") });
+        builder.Services.AddScoped<IClothingService, ClothingService>();
+        builder.Configuration.AddConfiguration(config);
 
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();

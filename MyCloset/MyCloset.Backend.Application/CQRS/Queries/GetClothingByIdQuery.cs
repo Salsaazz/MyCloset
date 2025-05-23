@@ -15,7 +15,7 @@ namespace MyCloset.Backend.Application.CQRS.Queries
 
         public async Task<Clothing> Handle(GetClothingByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _clothingRepo.GetClothingById(request.Id);
+            return await _clothingRepo.GetClothingById(request.Id, cancellationToken);
         }
     }
 }

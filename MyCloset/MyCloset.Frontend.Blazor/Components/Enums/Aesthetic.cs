@@ -1,4 +1,4 @@
-﻿namespace MyCloset.Frontend.Blazor.Enum
+﻿namespace MyCloset.Frontend.Blazor.Enums
 {
     public enum Aesthetic
     {
