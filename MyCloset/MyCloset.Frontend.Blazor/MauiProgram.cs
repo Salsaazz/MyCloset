@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Blazored.LocalStorage;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MyCloset.Frontend.Blazor.Services;
 using System.Reflection;
@@ -24,6 +25,7 @@ public static class MauiProgram
             });
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddScoped<IClothingService, ClothingService>();
+        builder.Services.AddBlazoredLocalStorage();
         builder.Configuration.AddConfiguration(config);
 
 #if DEBUG
