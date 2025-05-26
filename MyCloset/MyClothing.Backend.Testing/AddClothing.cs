@@ -62,14 +62,14 @@ namespace MyClothing.Backend.Testing
             // Arrange
             var futureDate = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
 
-            // Act: exception thrown when setting Date, NOT in Handle()
+            // Act & Assert: exception thrown when setting Date, NOT in Handle()
             var exception = Assert.Throws<ArgumentException>(() =>
             {
                 var invalidClothing = _clothing;
                 invalidClothing.Date = futureDate;
             });
 
-            // Assert
+            // Verify the exception message
             Assert.Equal("Invalid date. The date cannot be set in the future.", exception.Message);
         }
 
