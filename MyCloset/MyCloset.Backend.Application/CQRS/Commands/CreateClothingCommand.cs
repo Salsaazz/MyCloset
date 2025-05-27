@@ -25,9 +25,8 @@ namespace MyCloset.Backend.Application.CQRS.Commands
 
         private static void FormatClothingObj(Clothing clothing)
         {
-            clothing.Name = clothing.Name
-                .FormatString()
-                .ToLower();
+            clothing.Name = !string.IsNullOrWhiteSpace(clothing.Name) ? clothing.Name.FormatString() : clothing.Name;
+            clothing.Store = !string.IsNullOrWhiteSpace(clothing.Store) ? clothing.Store.FormatString() : clothing.Store;
         }
 
         private static List<Image> ConvertUploadImageDTOsToImages(List<CreateImageDTO> imageDTOs)

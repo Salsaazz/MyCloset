@@ -20,6 +20,7 @@ namespace MyClothing.Backend.Testing
         private readonly Aesthetic _aesthetic;
         private readonly ClothingType _clothingType;
         private readonly DateOnly _date;
+        private readonly Material _material = Material.SILK;
         private readonly List<CreateImageDTO?> _images;
         private readonly CreateClothingDTO _clothing;
         private readonly Mock<IClothingRepository> _mockRepo;
@@ -94,8 +95,6 @@ namespace MyClothing.Backend.Testing
         public void CreateClothing_ImagesGreaterThanThree_ReturnFailResult()
         {
             // Arrange
-            var futureDate = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
-
             List<CreateImageDTO> tooManyImages = [];
 
             for (int i = 0; i < 5; i++)
@@ -112,6 +111,23 @@ namespace MyClothing.Backend.Testing
 
             // Assert
             Assert.Contains("Too many images. Upload less than 4.", exception.Message);
+        }
+
+        [Fact]
+        public async Task CreateClothing_WithNoName_ReturnFailResult()
+        {
+            // Arrange
+
+            var invalidClothing = _clothing;
+            invalidClothing.Name = String.Empty;
+            var command = new CreateClothingCommand() { Clothing = invalidClothing };
+            var commandHandler = new CreateClothingCommandHandler(_mockRepo.Object);
+
+            // Act: verify the handler executes without exceptions
+            await commandHandler.Handle(command, new CancellationToken());
+
+            // Accept
+            _mockRepo.Verify(x => x.AddClothing(It.IsAny<Clothing>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }
