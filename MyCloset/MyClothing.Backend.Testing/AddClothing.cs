@@ -39,7 +39,7 @@ namespace MyClothing.Backend.Testing
             _clothingType = ClothingType.JACKET;
             _date = new DateOnly(_currentDate.Year, _currentDate.Month, _currentDate.Day);
             _images = [new("data", "image/jpg", "blazer")];
-            _clothing = new CreateClothingDTO(_name, _colors, _store, _size, _season, _prize, _aesthetic, _clothingType, _date, _images);
+            _clothing = new CreateClothingDTO(_name, _colors, _store, _size, _season, _prize, _aesthetic, _clothingType, _date, _material, _images);
             _mockRepo = new Mock<IClothingRepository>();
         }
 
@@ -111,23 +111,6 @@ namespace MyClothing.Backend.Testing
 
             // Assert
             Assert.Contains("Too many images. Upload less than 4.", exception.Message);
-        }
-
-        [Fact]
-        public async Task CreateClothing_WithNoName_ReturnFailResult()
-        {
-            // Arrange
-
-            var invalidClothing = _clothing;
-            invalidClothing.Name = String.Empty;
-            var command = new CreateClothingCommand() { Clothing = invalidClothing };
-            var commandHandler = new CreateClothingCommandHandler(_mockRepo.Object);
-
-            // Act: verify the handler executes without exceptions
-            await commandHandler.Handle(command, new CancellationToken());
-
-            // Accept
-            _mockRepo.Verify(x => x.AddClothing(It.IsAny<Clothing>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

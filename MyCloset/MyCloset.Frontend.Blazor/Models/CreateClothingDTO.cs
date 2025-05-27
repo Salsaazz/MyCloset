@@ -12,13 +12,13 @@ namespace MyCloset.Frontend.Blazor.Models
         public List<Color> Colors { get; set; } = [];
         public Size Size { get; set; }
         public DateOnly? Date { get; set; }
-        public Material Material { get; set; }
-
         public Season Season { get; set; }
         public double Prize { get; set; }
 
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
+        public Material Material { get; set; }
+
         public List<CreateImageDTO?> Images { get; set; } = [];
 
         public CreateClothingDTO() { }

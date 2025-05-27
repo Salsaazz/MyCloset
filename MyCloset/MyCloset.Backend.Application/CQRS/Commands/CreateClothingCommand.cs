@@ -60,7 +60,7 @@ namespace MyCloset.Backend.Application.CQRS.Commands
             return new Clothing(
                 clothingDTO.Name, clothingDTO.Colors, clothingDTO.Store, clothingDTO.Size,
                 clothingDTO.Season, clothingDTO.Prize, clothingDTO.Aesthetic,
-                clothingDTO.Type, clothingDTO.Date)
+                clothingDTO.Type, clothingDTO.Date, clothingDTO.Material)
             { Images = images };
         }
     }

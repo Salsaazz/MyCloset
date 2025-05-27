@@ -27,13 +27,13 @@ namespace MyCloset.Backend.Infrastructure.Configurations
                 builder.Property(c => c.Season)
                     .IsRequired();
 
-                builder.Property(c => c.Prize)
-                    .IsRequired();
-
                 builder.Property(c => c.Aesthetic)
                     .IsRequired();
 
                 builder.Property(c => c.Type)
+                    .IsRequired();
+
+                builder.Property(c => c.Material)
                     .IsRequired();
 
                 builder.Navigation(c => c.Images)
