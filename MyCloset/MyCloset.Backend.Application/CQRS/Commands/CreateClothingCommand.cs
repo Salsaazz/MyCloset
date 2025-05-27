@@ -25,7 +25,11 @@ namespace MyCloset.Backend.Application.CQRS.Commands
 
         private static void FormatClothingObj(Clothing clothing)
         {
-            clothing.Name = !string.IsNullOrWhiteSpace(clothing.Name) ? clothing.Name.FormatString() : clothing.Name;
+            if (!string.IsNullOrWhiteSpace(clothing.Name))
+                clothing.Name = clothing.Name.FormatString();
+            else
+                throw new ArgumentNullException("Name is required");
+
             clothing.Store = !string.IsNullOrWhiteSpace(clothing.Store) ? clothing.Store.FormatString() : clothing.Store;
         }
 

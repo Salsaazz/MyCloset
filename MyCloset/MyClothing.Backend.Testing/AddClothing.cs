@@ -112,5 +112,20 @@ namespace MyClothing.Backend.Testing
             // Assert
             Assert.Contains("Too many images. Upload less than 4.", exception.Message);
         }
+
+        [Fact]
+        public async Task CreateClothing_NameIsEmpty_ReturnFailResult()
+        {
+            // Arrange
+            var invalidClothing = _clothing;
+            invalidClothing.Name = String.Empty!;
+
+            var command = new CreateClothingCommand() { Clothing = invalidClothing };
+            var commandHandler = new CreateClothingCommandHandler(_mockRepo.Object);
+
+            // Act & Assert
+            await Assert.ThrowsAsync<ArgumentNullException>(() =>
+                commandHandler.Handle(command, new CancellationToken()));
+        }
     }
 }
