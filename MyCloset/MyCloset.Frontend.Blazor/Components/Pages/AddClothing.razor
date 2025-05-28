@@ -28,7 +28,7 @@
             {
                 int index = i;
                 <div>
-                    <img src="@RenderImage(index)" class="mb-2 h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
+                    <img src="@RenderImage(index)" class="mb-2 rounded-lg object-cover h-48 md:h-64 w-full"  />
                     <InputFile class="text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
                 </div>            
             }
@@ -53,7 +53,7 @@
                     </label>
                     <InputText @bind-value=Clothing.Store
                     placeholder="enter store name"
-                    class="text-lg sm:text-base w-full appearance-none text-gray-900" />
+                    class="pt-1 text-lg sm:text-base w-full appearance-none text-gray-900" />
                 </div>
                 <label for="date" class="font-bold text-md sm:text-xl mr-2">Date</label>
                 <input type="date" @bind-value=Clothing.Date>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="mt-10">
-                    <h3 class="text-md font-medium text-gray-900">Color</h3>
+                    <h3 class="text-md font-bold text-gray-900">Color</h3>
 
                     <fieldset aria-label="Choose a color" class="mt-4">
                         <div class="flex flex-wrap gap-x-3 gap-y-3">
@@ -86,7 +86,7 @@
                     </fieldset>
                 </div>
                 <div class="mt-10">
-                    <h2 class="text-md font-medium text-gray-900">Type</h2>
+                    <h3 class="text-md font-bold text-gray-900">Type</h3>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var clothingType in Enum.GetValues(typeof(ClothingType)))
@@ -106,7 +106,7 @@
                     </fieldset>
                 </div>
                 <div class="mt-10">
-                    <h3 class="text-md font-medium text-gray-900">Size</h3>
+                    <h3 class="text-md font-bold text-gray-900">Size</h3>
                     <div class="mt-4">
                         <InputSelect @bind-value="Clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
                             @foreach (var size in Enum.GetValues(typeof(Size)))
@@ -119,7 +119,7 @@
             </div>
 
             <div class="mt-10">
-                <h2 class="text-md font-medium text-gray-900">Season</h2>
+                <h3 class="text-md font-bold text-gray-900">Season</h3>
 
                 <fieldset aria-label="Choose a season">
                     <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
@@ -139,7 +139,7 @@
                 </fieldset>
 
                 <div class="mt-4">
-                    <h2 class="text-md font-medium text-gray-900">Materials</h2>
+                    <h3 class="text-md font-bold text-gray-900">Materials</h3>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var material in Enum.GetValues(typeof(Material)))
@@ -152,18 +152,15 @@
                                     name="size-choice" 
                                     class="sr-only">
                                     <span>
-                                        @(material.ToString().ToLower()
-                                                                                                                                                                                                                                                        .Split('_')
-                                                                                                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
-                                    </span>                                  
+                                        @material.ToString().ToUpper()[0]@material.ToString().ToLower().Substring(1)
+                                    </span>
                                 </label>
                             } 
                         </div>
                     </fieldset>
                 </div>
                 <div class="mt-4">
-                    <h2 class="text-md font-medium text-gray-900">Aesthetic</h2>
+                    <h3 class="text-md font-bold text-gray-900">Aesthetic</h3>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var aesthetic in Enum.GetValues(typeof(Aesthetic)))
@@ -335,14 +332,14 @@
 
     public string GetPropertyClass<T>(T property)
     {
-        const string baseClass = "border-1 border-gray-900 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs font-medium text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
+        const string baseClass = "border-1 border-gray-900 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
 
         return property switch
         {
-            Aesthetic aesthetic => Clothing.Aesthetic == aesthetic ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
-            Material material => Clothing.Material == material ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            Aesthetic aesthetic => Clothing.Aesthetic == aesthetic ? $"{baseClass} font-bold bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            Material material => Clothing.Material == material ? $"{baseClass} font-bold bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
             Season season => $"{GetSeasonColor(season)}",
-            ClothingType clothingType => Clothing.Type == clothingType ? $"{baseClass} bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
+            ClothingType clothingType => Clothing.Type == clothingType ? $"{baseClass} font-bold bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
             _ => baseClass
         };
     }
@@ -350,14 +347,14 @@
     private string GetSeasonColor(Season season)
     {
         var isSelected = Clothing.Season == season;
-        const string baseClass = "border-1 border-gray-500 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs font-medium text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
+        const string baseClass = "border-1 border-gray-500 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-sm text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
 
         return season switch
         {
-            Season.FALL => isSelected ? $"{baseClass} bg-amber-300" : $"{baseClass} bg-amber-500 hover:bg-amber-300",
-            Season.WINTER => isSelected ? $"{baseClass} bg-sky-300" : $"{baseClass} bg-sky-500 hover:bg-sky-300",
-            Season.SPRING => isSelected ? $"{baseClass} bg-rose-300" : $"{baseClass} bg-rose-500 hover:bg-rose-300",
-            Season.SUMMER => isSelected ? $"{baseClass} bg-lime-300" : $"{baseClass} bg-lime-500 hover:bg-lime-300",
+            Season.FALL => isSelected ? $"{baseClass} font-bold bg-amber-200" : $"{baseClass} bg-amber-500 hover:bg-amber-300",
+            Season.WINTER => isSelected ? $"{baseClass} font-bold bg-sky-200" : $"{baseClass} bg-sky-500 hover:bg-sky-300",
+            Season.SPRING => isSelected ? $"{baseClass} font-bold bg-rose-200" : $"{baseClass} bg-rose-500 hover:bg-rose-300",
+            Season.SUMMER => isSelected ? $"{baseClass} font-bold bg-lime-200" : $"{baseClass} bg-lime-500 hover:bg-lime-300",
             _ => ""
         };
     }
