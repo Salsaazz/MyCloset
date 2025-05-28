@@ -205,13 +205,6 @@
 </div>
 
 @code {
-
-
-
-
-
-
-
     public CreateClothingDTO Clothing = new CreateClothingDTO();
     public const int MAX_IMAGES = 3;
     public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
@@ -381,7 +374,7 @@
 
         ShowSuccess = false;
         await localStorage.RemoveItemAsync("ShowSuccess");
-        StateHasChanged(); // Force immediate UI update
+        StateHasChanged();
     }
 
     private void ResetClothing() 
