@@ -29,8 +29,14 @@
                 int index = i;
                 <div>
                     <img src="@RenderImage(index)" class="mb-2 rounded-lg object-cover h-48 md:h-64 w-full"  />
-                    <InputFile class="text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
-                </div>            
+                    <div class="gap-y-2 lg:gap-0 flex flex-col lg:flex-row">
+                        <InputFile class="w-32 text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
+                        <button @onclick="() => ClearItem(index)" class="w-24 lg:-ml-2 h-[2rem] bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded">
+                            Clear
+                        </button>
+                    </div>
+
+                </div>
             }
         </div>
 
@@ -174,9 +180,9 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                                                                                                                                                                                        .Split('_')
-                                                                                                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                                                                                                                .Split('_')
+                                                                                                                                                                                                                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                                                                                                                .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -202,6 +208,9 @@
 </div>
 
 @code {
+
+
+
     public CreateClothingDTO Clothing = new CreateClothingDTO();
     public const int MAX_IMAGES = 3;
     public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
@@ -254,6 +263,16 @@
 
         return"Images/placeholder_image.png";
 
+    }
+
+    public void ClearItem(int imageIndex)
+    {
+
+        if (Images[imageIndex] is not null)
+        {
+            Images[imageIndex] = null;
+            StateHasChanged();
+        }
     }
 
     public async Task UploadImage(InputFileChangeEventArgs eventArgs, int id)
