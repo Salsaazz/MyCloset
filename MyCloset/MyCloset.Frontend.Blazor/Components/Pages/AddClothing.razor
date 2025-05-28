@@ -21,52 +21,16 @@
 }
 <div class="bg-white">
     <div class="pt-6">
-        <nav aria-label="Breadcrumb">
-            <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                <li>
-                    <div class="flex items-center">
-                        <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                        </svg>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                        </svg>
-                    </div>
-                </li>
-
-                <li class="text-sm">
-                    <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Clothing name here</a>
-                </li>
-            </ol>
-        </nav>
-
         <!-- Image gallery -->
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl grid grid-cols-3 gap-4 lg:gap-x-8 lg:px-8">
 
             @for(int i = 0; i < MAX_IMAGES; i++)
             {
                 int index = i;
-                switch (i)
-                {
-                    case 0:
-                        <div>
-                            <img src="@RenderImage(index)" class="h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
-                            <InputFile class="text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
-                        </div>
-                        break;
-                    default:
-                        <div>
-                            <img src="@RenderImage(index)" class=" h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
-                            <InputFile class="text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
-                        </div>
-                        break;
-                }               
+                <div>
+                    <img src="@RenderImage(index)" class="mb-2 h-48 w-84 md:h-120 md:w-96 rounded-lg object-cover" />
+                    <InputFile class="text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
+                </div>            
             }
         </div>
 
@@ -91,7 +55,7 @@
                     placeholder="enter store name"
                     class="text-lg sm:text-base w-full appearance-none text-gray-900" />
                 </div>
-                <label for="date" class="font-bold text-md sm:text-xl mr-2">Date bought</label>
+                <label for="date" class="font-bold text-md sm:text-xl mr-2">Date</label>
                 <input type="date" @bind-value=Clothing.Date>
             </div>
 
@@ -153,11 +117,6 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-10">
-                <div class="space-y-6">
-                    <p class="text-base text-gray-900">description text...</p>
-                </div>
-            </div>
 
             <div class="mt-10">
                 <h2 class="text-md font-medium text-gray-900">Season</h2>
@@ -194,9 +153,9 @@
                                     class="sr-only">
                                     <span>
                                         @(material.ToString().ToLower()
-                                                                                                                                                                                                                                                    .Split('_')
-                                                                                                                                                                                                                                                    .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                                                                                    .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                                                                                                        .Split('_')
+                                                                                                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -218,9 +177,9 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                                                                                                                                                                                    .Split('_')
-                                                                                                                                                                                                                                                    .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                                                                                    .Aggregate((a, b) => a + " " + b))
+                                                                                                                                                                                                                                                        .Split('_')
+                                                                                                                                                                                                                                                        .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                                                                                                                                                                                                        .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -246,6 +205,10 @@
 </div>
 
 @code {
+
+
+
+
 
 
 
@@ -290,7 +253,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        ShowSuccess = await localStorage.GetItemAsync<bool>("ShowSuccess");
+        await localStorage.RemoveItemAsync("ShowSuccess");
+        ShowSuccess = false;
     }
 
     public string RenderImage(int imageIndex)
@@ -411,13 +375,13 @@
         ShowError = false;
         await localStorage.SetItemAsync("ShowSuccess", true);
         ResetClothing();
-        StateHasChanged();
+        StateHasChanged(); // Force immediate UI update
 
         await Task.Delay(5000); // wait 5 seconds
 
         ShowSuccess = false;
         await localStorage.RemoveItemAsync("ShowSuccess");
-        StateHasChanged();
+        StateHasChanged(); // Force immediate UI update
     }
 
     private void ResetClothing() 
@@ -430,7 +394,8 @@
     private async Task SetError(string errorMessage, bool isHttpMessage, int? statusCode)
     {
         ShowError = true;
-        await localStorage.SetItemAsync("ShowSuccess", false);
+        await localStorage.RemoveItemAsync("ShowSuccess");
+        ShowSuccess = false;
 
         var processedMessage = isHttpMessage 
             ? errorMessage.Split('\n').FirstOrDefault()?.Trim() 
