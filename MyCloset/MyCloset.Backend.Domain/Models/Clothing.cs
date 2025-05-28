@@ -3,7 +3,7 @@
 namespace MyCloset.Backend.Domain.Models
 {
     public class Clothing(string name, List<Color> colors, string store, Size size,
-        Season season, double prize, Aesthetic aesthetic, ClothingType type, DateOnly? date)
+        Season season, double prize, Aesthetic aesthetic, ClothingType type, DateOnly? date, Material material)
     {
         public uint Id { get; init; }
         public string Name { get; set; } = name;
@@ -15,6 +15,7 @@ namespace MyCloset.Backend.Domain.Models
         public double Prize { get; set; } = prize;
         public Aesthetic Aesthetic { get; set; } = aesthetic;
         public ClothingType Type { get; set; } = type;
+        public Material Material { get; set; } = material;
         public List<Image?> Images { get; set; } = [];
     }
 }

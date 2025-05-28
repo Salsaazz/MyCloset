@@ -58,10 +58,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
         <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.3" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.5" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />

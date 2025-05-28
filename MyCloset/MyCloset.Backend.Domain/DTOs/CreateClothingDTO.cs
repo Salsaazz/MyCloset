@@ -35,6 +35,8 @@ namespace MyCloset.Backend.Domain.DTOs
         }
         public Aesthetic Aesthetic { get; set; }
         public ClothingType Type { get; set; }
+        public Material Material { get; set; }
+
         private List<CreateImageDTO?> images = [];
         public List<CreateImageDTO?> Images
         {
@@ -49,7 +51,7 @@ namespace MyCloset.Backend.Domain.DTOs
         }
 
         public CreateClothingDTO(string name, List<Color> colors, string store, Size size, Season season, double prize,
-            Aesthetic aesthetic, ClothingType type, DateOnly? date, List<CreateImageDTO?>? images)
+            Aesthetic aesthetic, ClothingType type, DateOnly? date, Material material, List<CreateImageDTO?>? images)
         {
             Name = name;
             Colors = colors;
@@ -60,6 +62,7 @@ namespace MyCloset.Backend.Domain.DTOs
             Aesthetic = aesthetic;
             Type = type;
             Date = date;
+            Material = material;
             Images = images!;
         }
     }

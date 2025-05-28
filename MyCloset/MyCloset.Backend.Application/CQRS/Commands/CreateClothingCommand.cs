@@ -25,9 +25,12 @@ namespace MyCloset.Backend.Application.CQRS.Commands
 
         private static void FormatClothingObj(Clothing clothing)
         {
-            clothing.Name = clothing.Name
-                .FormatString()
-                .ToLower();
+            if (!string.IsNullOrWhiteSpace(clothing.Name))
+                clothing.Name = clothing.Name.FormatString();
+            else
+                throw new ArgumentNullException("Name is required");
+
+            clothing.Store = !string.IsNullOrWhiteSpace(clothing.Store) ? clothing.Store.FormatString() : clothing.Store;
         }
 
         private static List<Image> ConvertUploadImageDTOsToImages(List<CreateImageDTO> imageDTOs)
@@ -61,7 +64,7 @@ namespace MyCloset.Backend.Application.CQRS.Commands
             return new Clothing(
                 clothingDTO.Name, clothingDTO.Colors, clothingDTO.Store, clothingDTO.Size,
                 clothingDTO.Season, clothingDTO.Prize, clothingDTO.Aesthetic,
-                clothingDTO.Type, clothingDTO.Date)
+                clothingDTO.Type, clothingDTO.Date, clothingDTO.Material)
             { Images = images };
         }
     }
