@@ -1,0 +1,39 @@
+﻿@using MyCloset.Frontend.Blazor.Models
+
+<div class="flex items-center">
+    <label class="font-bold text-2xl sm:text-3xl mr-2">
+        Name
+    </label>
+    <InputText 
+    @bind-value=Clothing.Name 
+    placeholder="enter name"
+    class="text-xl sm:text-2xl w-full appearance-none text-gray-900"
+    />
+</div>
+
+<div class="flex items-center">
+    <label class="font-bold text-md sm:text-xl mr-2">
+        Store
+    </label>
+    <InputText @bind-value=Clothing.Store
+    placeholder="enter store name"
+    class="pt-1 text-lg sm:text-base w-full appearance-none text-gray-900" />
+</div>
+<label for="date" class="font-bold text-md sm:text-xl mr-2">Date</label>
+<input type="date" @bind-value=Clothing.Date>
+
+<div class="mt-4 lg:row-span-3 lg:mt-0">
+    <h2 class="sr-only">Product information</h2>
+    <div class="flex flex-row text-2xl sm:text-3xl gap-1">
+        <p>€</p>
+        <InputNumber @bind-value=Clothing.Prize
+        placeholder="0"
+        class="w-full appearance-none text-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        min=0 />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public required Clothing Clothing { get; set; }
+}

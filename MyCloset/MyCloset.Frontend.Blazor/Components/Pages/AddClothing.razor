@@ -5,7 +5,7 @@
 @inject IClothingService ClothingService;
 @inject NavigationManager navigationHelper;
 @inject Blazored.LocalStorage.ILocalStorageService localStorage;
-@page "/"
+@page "/add"
 
 @if (ShowSuccess)
 {
@@ -267,7 +267,6 @@
 
     public void ClearItem(int imageIndex)
     {
-
         if (Images[imageIndex] is not null)
         {
             Images[imageIndex] = null;

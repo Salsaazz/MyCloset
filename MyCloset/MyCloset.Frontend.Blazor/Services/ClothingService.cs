@@ -1,5 +1,6 @@
 ﻿using MyCloset.Frontend.Blazor.Models;
 using System.Net.Http.Json;
+using HttpClient = System.Net.Http.HttpClient;
 
 namespace MyCloset.Frontend.Blazor.Services
 {
@@ -19,6 +20,21 @@ namespace MyCloset.Frontend.Blazor.Services
             }
 
             return response;
+        }
+
+        public async Task<List<Clothing?>> GetAllClothing()
+        {
+            using HttpClient client = new HttpClient();
+            try
+            {
+                var response = await client.GetFromJsonAsync<List<Clothing?>>(new Uri("https://localhost:7254/Clothing"));
+                return response!;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
