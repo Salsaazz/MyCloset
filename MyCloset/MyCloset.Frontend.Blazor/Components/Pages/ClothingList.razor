@@ -5,11 +5,12 @@
 
 @if (Clothes.Any())
 {
-    @foreach (var clothing in Clothes)
-    {
-        <ClothingItem Clothing="clothing"></ClothingItem>
-    }
-    
+    <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-3">
+        @foreach (var clothing in Clothes)
+        {
+                <ClothingItem Clothing="clothing"></ClothingItem>
+        }
+    </div>
 }
 else{
 
