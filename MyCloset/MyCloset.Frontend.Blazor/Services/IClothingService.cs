@@ -5,6 +5,6 @@ namespace MyCloset.Frontend.Blazor.Services
     public interface IClothingService
     {
         public Task<HttpResponseMessage> AddClothing(CreateClothingDTO clothing);
-        public Task<List<Clothing?>> GetAllClothing();
+        public Task<List<ClothingDTO?>> GetAllClothing();
     }
 }

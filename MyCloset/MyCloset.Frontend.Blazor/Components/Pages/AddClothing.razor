@@ -180,9 +180,7 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                                                                                                                                                                                                .Split('_')
-                                                                                                                                                                                                                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                                                                                                                                                                                                                .Aggregate((a, b) => a + " " + b))
+                                                            .Split('_')                                                                                                                                                                                                                                                             .Aggregate((a, b) => a + " " + b))
                                     </span>                                  
                                 </label>
                             } 
@@ -262,7 +260,6 @@
             return $"data:{Images[imageIndex].ContentType};base64,{Images[imageIndex].Data}";
 
         return"Images/placeholder_image.png";
-
     }
 
     public void ClearItem(int imageIndex)

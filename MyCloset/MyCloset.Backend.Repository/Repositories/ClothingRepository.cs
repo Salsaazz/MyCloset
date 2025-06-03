@@ -26,7 +26,9 @@ namespace MyCloset.Backend.Infrastructure.Repositories
                 Id = c.Id,
                 Name = c.Name,
                 Store = c.Store,
-                Date = c.Date
+                Prize = c.Prize,
+                Date = c.Date,
+                Images = c.Images
             });
 
             return clothes.Any() ? clothes : Enumerable.Empty<ClothingDTO>().AsQueryable();
