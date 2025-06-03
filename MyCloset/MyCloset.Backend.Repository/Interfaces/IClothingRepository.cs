@@ -6,7 +6,7 @@ namespace MyCloset.Backend.Infrastructure.Interfaces
     public interface IClothingRepository
     {
         public Task AddClothing(Clothing clothing, CancellationToken cancellationToken);
-        public IQueryable<ClothingDTO> GetAllClothing();
+        public Task<IEnumerable<ClothingDTO?>> GetAllClothing();
         public Task<Clothing> GetClothingById(uint id, CancellationToken cancellationToken);
     }
 }

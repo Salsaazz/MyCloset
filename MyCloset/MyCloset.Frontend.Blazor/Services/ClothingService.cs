@@ -25,16 +25,8 @@ namespace MyCloset.Frontend.Blazor.Services
         public async Task<List<ClothingDTO?>> GetAllClothing()
         {
             using HttpClient client = new HttpClient();
-            try
-            {
-                var response = await client.GetFromJsonAsync<List<ClothingDTO?>>(new Uri("https://localhost:7254/Clothing"));
-                return response!;
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
+            return await client.GetFromJsonAsync<List<ClothingDTO?>>(new Uri("https://localhost:7254/Clothing"));
         }
     }
 }

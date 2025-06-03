@@ -4,28 +4,28 @@
     <img src=@RenderImage() class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
     <div class="mt-4 flex justify-between">
         <div>
-            <h3 class="text-sm text-gray-700">
+            <h3 class="md:text-sm text-gray-700 lg:text-base sm:text-base font-semibold">
                 <a href="#">
-                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    <span aria-hidden="true"></span>
                     <span placeholder="enter name">@Clothing.Name</span>
                 </a>
             </h3>
             <p 
-            placeholder="enter store name" 
-            class="mt-1 text-sm text-gray-500" 
-            >@Clothing.Store</p>
+            placeholder="enter store name"
+               class="mt-1 md:text-sm text-gray-500 lg:text-base lg:text-base sm:text-base">
+               @Clothing.Store</p>
         </div>
         <div class="flex flex-col">
             <div class="flex items-center">
-                <span class="text-sm font-medium text-gray-900">€</span>
+                <span class="md:text-sm font-medium text-gray-900 lg:text-base sm:text-base">€</span>
                 <p
                     placeholder="0"
-                    class="text-sm font-medium text-gray-900 ml-1"
+                   class="md:text-sm font-medium text-gray-900 ml-1 lg:text-base sm:text-base m"
                    min=0>@Clothing.Prize</p>
             </div>
 
-            <time datetime=@Clothing.Date 
-            class="mt-1 text-sm text-gray-500">@Clothing.Date</time>
+            <time datetime=@Clothing.Date
+                  class="mt-1 md:text-sm text-gray-500 lg:text-base sm:text-base">@Clothing.Date</time>
         </div>
     </div>
 </div>

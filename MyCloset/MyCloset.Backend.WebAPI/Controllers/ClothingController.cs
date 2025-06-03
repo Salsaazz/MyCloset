@@ -10,19 +10,8 @@ namespace MyCloset.Backend.WebAPI.Controllers
     public class ClothingController(IMediator mediator) : IApiController(mediator)
     {
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            try
-            {
-                return Ok(await _mediator.Send(new GetAllClothingQuery()));
-            }
-            catch (Exception e)
-            {
+        public async Task<IActionResult> GetAll() => Ok(await _mediator.Send(new GetAllClothingQuery()));
 
-                return StatusCode(500, e.Message);
-            }
-
-        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)

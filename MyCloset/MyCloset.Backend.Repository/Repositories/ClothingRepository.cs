@@ -18,9 +18,9 @@ namespace MyCloset.Backend.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public IQueryable<ClothingDTO> GetAllClothing()
+        public async Task<IEnumerable<ClothingDTO?>> GetAllClothing()
         {
-            IQueryable<ClothingDTO>? clothes = _dbContext.Clothes.AsQueryable().Select(c => new ClothingDTO
+            return await _dbContext.Clothes.Select(c => new ClothingDTO
             {
 
                 Id = c.Id,
@@ -29,9 +29,7 @@ namespace MyCloset.Backend.Infrastructure.Repositories
                 Prize = c.Prize,
                 Date = c.Date,
                 Images = c.Images
-            });
-
-            return clothes.Any() ? clothes : Enumerable.Empty<ClothingDTO>().AsQueryable();
+            }).ToListAsync();
         }
 
         public async Task<Clothing> GetClothingById(uint id, CancellationToken cancellationToken)
