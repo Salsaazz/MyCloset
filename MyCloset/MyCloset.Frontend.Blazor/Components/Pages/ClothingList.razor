@@ -18,7 +18,7 @@ else{
         <div class="w-10 h-10 sm:w-12 sm:h-12">
             <LoadingCircle></LoadingCircle>
         </div>
-   </div>
+    </div>
 }
 @if (ShowError)
 {
@@ -29,11 +29,10 @@ else{
     public List<ClothingDTO?> Clothes { get; set; } = [];
     public bool ShowError { get; set; }
     public string? ErrorMessage { get; set; }
-    private bool _showLoading;
+    private bool _showLoading = true;
 
     protected override async Task OnInitializedAsync()
     {
-        _showLoading = true;
         await SendCreatClothingRequest();
     }
 
@@ -42,17 +41,11 @@ else{
         try
         {
             Clothes = await ClothingService.GetAllClothing();
-            if (Clothes.Any())
-            {
-                _showLoading = false;
-            }
-            else
+            if (!Clothes.Any())
             {
                 string errorMessage = "The closet is empty...";
                 SetError(errorMessage, false, null);
-                _showLoading = false;
             }
-            StateHasChanged();
         }
         catch (HttpRequestException ex)
         {
@@ -61,6 +54,10 @@ else{
         catch (Exception ex)
         {
             SetError(ex.Message, true, null);
+        }
+        finally
+        {
+            _showLoading = false;
         }
     }
 
