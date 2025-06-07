@@ -173,8 +173,9 @@
                                     class="sr-only">
                                     <span>
                                         @(aesthetic.ToString().ToLower()
-                                                                                .Split('_')                                                                                                                                                                                                                                                             .Aggregate((a, b) => a + " " + b))
-                                    </span>                                  
+                                                                .Split('_')
+                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                                                .Aggregate((a, b) => a + " " + b))                                    </span>                                  
                                 </label>
                             } 
                         </div>
