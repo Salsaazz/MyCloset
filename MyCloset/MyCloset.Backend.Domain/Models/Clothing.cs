@@ -2,7 +2,7 @@
 
 namespace MyCloset.Backend.Domain.Models
 {
-    public class Clothing(string name, List<Color> colors, string store, Size size,
+    public class Clothing(string name, List<Color> colors, string? store, Size size,
         Season season, double prize, Aesthetic aesthetic, ClothingType type, DateOnly? date, Material material)
     {
         public uint Id { get; init; }

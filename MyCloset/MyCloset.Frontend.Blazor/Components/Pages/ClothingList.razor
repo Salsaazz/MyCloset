@@ -1,0 +1,79 @@
+﻿@using MyCloset.Frontend.Blazor.Models
+@using MyCloset.Frontend.Blazor.Services
+@using MyCloset.Frontend.Blazor.Components.SubComponents
+@inject IClothingService ClothingService;
+@page "/"
+
+@if (!_showLoading)
+{
+    <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
+        @foreach (var clothing in Clothes)
+        {
+            <ClothingItem Clothing="clothing"></ClothingItem>
+        }
+    </div>
+}
+else{
+    <div class="h-screen flex items-center justify-center">
+        <div class="w-10 h-10 sm:w-12 sm:h-12">
+            <LoadingCircle></LoadingCircle>
+        </div>
+   </div>
+}
+@if (ShowError)
+{
+    <ErrorAlert ErrorMessage=@ErrorMessage></ErrorAlert>
+}
+
+@code {
+    public List<ClothingDTO?> Clothes { get; set; } = [];
+    public bool ShowError { get; set; }
+    public string? ErrorMessage { get; set; }
+    private bool _showLoading;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _showLoading = true;
+        await SendCreatClothingRequest();
+    }
+
+    public async Task SendCreatClothingRequest()
+    {
+        try
+        {
+            Clothes = await ClothingService.GetAllClothing();
+            if (Clothes.Any())
+            {
+                _showLoading = false;
+            }
+            else
+            {
+                string errorMessage = "The closet is empty...";
+                SetError(errorMessage, false, null);
+                _showLoading = false;
+            }
+            StateHasChanged();
+        }
+        catch (HttpRequestException ex)
+        {
+            SetError(ex.Message, true, null);
+        }
+        catch (Exception ex)
+        {
+            SetError(ex.Message, true, null);
+        }
+    }
+
+    public void SetError(string errorMessage, bool isHttpMessage, int? statusCode)
+    {
+        ShowError = true;
+
+        var processedMessage = isHttpMessage
+            ? errorMessage.Split('\n').FirstOrDefault()?.Trim()
+            : errorMessage;
+
+        ErrorMessage = statusCode.HasValue
+            ? $" ({statusCode}): {processedMessage}"
+            : $" {processedMessage}"; StateHasChanged();
+    }
+}

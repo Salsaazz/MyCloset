@@ -1,12 +1,14 @@
 ﻿namespace MyCloset.Frontend.Blazor.Models
 {
-    public class Image(string contentType, string name, string base64String)
+    public class Image(byte[] data, string contentType, string fileName)
     {
+        public uint Id { get; init; }
+        public byte[] Data { get; set; } = data;
         public string ContentType { get; set; } = contentType;
+        public string FileName { get; set; } = fileName;
+        public uint ClothingId { get; set; }
 
-        public string FileName { get; set; } = name;
-
-        public string Data { get; set; } = base64String;
+        public Clothing Clothing { get; set; }
     }
 
 
