@@ -71,5 +71,10 @@
         <PackageReference Include="ServiceStack.Redis" Version="8.6.0" />
         <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
     </ItemGroup>
+	<Target Name="Tailwind" BeforeTargets="BeforeBuild">
+		<Exec Command="node --version" ContinueOnError="false" />
+		<Exec Command="npm install" Condition="!Exists('node_modules')" />
+		<Exec Command="npx tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --minify" />
+	</Target>
 	
 </Project>
