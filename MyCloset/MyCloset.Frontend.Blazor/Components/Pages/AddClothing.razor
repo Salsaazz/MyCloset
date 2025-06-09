@@ -15,68 +15,88 @@
 <div class="bg-white">
     <div class="pt-6">
         <!-- Image gallery -->
-        <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl grid grid-cols-3 gap-4 lg:gap-x-8 lg:px-8">
+        <div class="mx-auto mt-6 max-w-2xl sm:px-6 grid max-w-7xl grid-cols-3 gap-4 lg:gap-x-8">
 
             @for(int i = 0; i < MAX_IMAGES; i++)
             {
                 int index = i;
                 <div>
-                    <img src="@RenderImage(index)" class="mb-2 rounded-lg object-cover h-48 md:h-64 w-full"  />
-                    <div class="gap-y-2 lg:gap-0 flex flex-col lg:flex-row">
-                        <InputFile class="w-32 text-transparent" accept=@ALLOWED_IMG_EXTENSIONS OnChange="(ev) =>UploadImage(ev, index)" />
-                        <button @onclick="() => ClearItem(index)" class="w-24 lg:-ml-2 h-[2rem] bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded">
+                    <img src="@RenderImage(index)" class="mb-2 rounded-lg object-cover h-48 md:h-64 w-full" />
+                    <div class="flex flex-col lg:flex-row gap-2">
+                        <InputFile class="block w-32 text-sm text-gray-500 text-transparent
+                                         file:py-2.5 file:px-4
+                                         file:rounded-md file:border-0
+                                         file:text-sm file:font-semibold
+                                         file:bg-blue-50 file:text-blue-700
+                                         hover:file:bg-blue-100"
+                                   accept="@ALLOWED_IMG_EXTENSIONS"
+                                   OnChange="(ev) => UploadImage(ev, index)" />
+
+                        <button @onclick="() => ClearItem(index)"
+                                class="!rounded-lg w-24
+                                hover:bg-gray-200 text-gray-800
+                                       font-semibold py-2.5 px-4 bg-gray-100
+                                       transition-colors">
                             Clear
                         </button>
                     </div>
-
                 </div>
             }
         </div>
 
         <!-- Product info -->
-        <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div class="gap-y-10vh lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                <div class="flex items-center">
-                    <label class="font-bold text-2xl sm:text-3xl mr-2">
-                        Name
-                    </label>
-                    <InputText 
-                    @bind-value=Clothing.Name 
-                    placeholder="enter name"
-                    class="text-xl sm:text-2xl w-full appearance-none text-gray-900"
-                    />
+        <div class="mx-auto max-w-2xl px-4 pt-6 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+            <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                <div class="mb-6 transition-all duration-200 hover:bg-gray-50 rounded-lg p-2">
+                    <label class="block text-lg font-medium text-gray-700 mb-1">Name</label>
+                    <InputText @bind-value="Clothing.Name"
+                               placeholder="e.g. 'Denim Jacket'"
+                               class="w-full p-3 text-lg sm:text-xl border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all" />
                 </div>
-                <div class="flex items-center">
-                    <label class="font-bold text-md sm:text-xl mr-2">
-                        Store
-                    </label>
-                    <InputText @bind-value=Clothing.Store
-                    placeholder="enter store name"
-                    class="pt-1 text-lg sm:text-base w-full appearance-none text-gray-900" />
+
+                <div class="mb-6 transition-all duration-200 hover:bg-gray-50 rounded-lg p-2">
+                    <label class="block text-lg font-medium text-gray-700 mb-1">Store</label>
+                    <InputText @bind-value="Clothing.Store"
+                               placeholder="e.g. 'Uniqlo'"
+                               class="w-full p-3 text-lg sm:text-xl border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all" />
                 </div>
-                <label for="date" class="font-bold text-md sm:text-xl mr-2">Date</label>
-                <input type="date" @bind-value=Clothing.Date>
+
+                <div class="mb-6 transition-all duration-200 hover:bg-gray-50 rounded-lg p-2">
+                    <label class="block text-lg font-medium text-gray-700 mb-1">Purchase Date</label>
+                    <input type="date"
+                           @bind-value="Clothing.Date"
+                           class="w-full p-3 text-lg sm:text-xl border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all" />
+                </div>
             </div>
 
             <!-- Options -->
-            <div class="mt-4 lg:row-span-3 lg:mt-0">
-                <h2 class="sr-only">Product information</h2>
-                <div class="flex flex-row text-2xl sm:text-3xl gap-1">
-                    <p>€</p>
-                    <InputNumber @bind-value=Clothing.Prize
-                    placeholder="0"
-                    class="w-full appearance-none text-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                    min=0 />
+            <div class="lg:row-span-3 lg:mt-0">
+                <label class="block text-lg font-medium text-gray-700 mb-1">Prize</label>
+
+                <div class="group relative flex items-center">
+
+                    <span class="absolute left-3 text-2xl font-medium text-gray-500 pointer-events-none">€</span>
+
+                    <InputNumber @bind-value="Clothing.Prize"
+                                 placeholder="0.00"
+                                 min="0"
+                                 step="0.01"
+                                 class="w-full pl-10 pr-4 py-3 text-2xl sm:text-3xl border border-gray-300 rounded-lg
+           focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+           [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0
+           [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none
+           [&::-webkit-inner-spin-button]:appearance-none
+           transition-all duration-150 hover:border-gray-400" />
                 </div>
 
                 <div class="mt-10">
-                    <h3 class="text-md font-bold text-gray-900">Color</h3>
+                    <h3 class="text-base font-bold text-gray-900">Color</h3>
 
                     <fieldset aria-label="Choose a color" class="mt-4">
                         <div class="flex flex-wrap gap-x-3 gap-y-3">
                             @foreach (var color in Enum.GetValues(typeof(Color)))
                             {
-                                <label aria-label=@color class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-hidden">
+                                <label aria-label=@color class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-none">
                                     <input @onclick="() => ChooseColors((Color)color)" type="radio" name="color-choice" value=@color class="sr-only">
                                     <span aria-hidden="true" class=@GetColorClass((Color)color)></span>
                                 </label>      
@@ -85,7 +105,7 @@
                     </fieldset>
                 </div>
                 <div class="mt-10">
-                    <h3 class="text-md font-bold text-gray-900">Type</h3>
+                    <h3 class="text-base font-bold text-gray-900">Type</h3>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var clothingType in Enum.GetValues(typeof(ClothingType)))
@@ -96,7 +116,7 @@
                                     type="radio" 
                                     name="size-choice" 
                                     class="sr-only">
-                                    <span>
+                                    <span class="w-full flex items-center justify-center text-center h-full">
                                         @clothingType.ToString().ToUpper()[0]@clothingType.ToString().ToLower().Substring(1)
                                     </span>                                  
                                 </label>
@@ -105,7 +125,7 @@
                     </fieldset>
                 </div>
                 <div class="mt-10">
-                    <h3 class="text-md font-bold text-gray-900">Size</h3>
+                    <h3 class="text-base font-bold text-gray-900">Size</h3>
                     <div class="mt-4">
                         <InputSelect @bind-value="Clothing.Size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5">
                             @foreach (var size in Enum.GetValues(typeof(Size)))
@@ -118,10 +138,10 @@
             </div>
 
             <div class="mt-10">
-                <h3 class="text-md font-bold text-gray-900">Season</h3>
+                <h3 class="font-bold text-gray-900">Season</h3>
 
-                <fieldset aria-label="Choose a season">
-                    <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
+                <fieldset aria-label="Choose a season" class="w-full">
+                    <div class="gap-x-4 grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                         @foreach (var season in Enum.GetValues(typeof(Season)))
                         {
 
@@ -129,16 +149,18 @@
                                 <input 
                                 @onclick="() => ChoosePropertyValue((Season)season)" 
                                 type="radio" 
-                                name="size-choice" 
+                                name="season-choice" 
                                 class="sr-only">
-                                <span>@season</span>  
+                                <span class="w-full flex items-center justify-center text-center h-full">
+                                    @season
+                                </span>
                             </label>
                         } 
                     </div>
                 </fieldset>
 
                 <div class="mt-4">
-                    <h3 class="text-md font-bold text-gray-900">Materials</h3>
+                    <h3 class="text-base font-bold text-gray-900">Materials</h3>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var material in Enum.GetValues(typeof(Material)))
@@ -148,9 +170,9 @@
                                     <input 
                                     @onclick="() => ChoosePropertyValue((Material)material)" 
                                     type="radio" 
-                                    name="size-choice" 
+                                    name="material-choice" 
                                     class="sr-only">
-                                    <span>
+                                    <span class="w-full flex items-center justify-center text-center h-full">
                                         @material.ToString().ToUpper()[0]@material.ToString().ToLower().Substring(1)
                                     </span>
                                 </label>
@@ -159,7 +181,8 @@
                     </fieldset>
                 </div>
                 <div class="mt-4">
-                    <h3 class="text-md font-bold text-gray-900">Aesthetic</h3>
+                    <h3 class="text-base font-bold text-gray-900">Aesthetic</h3>
+                    <div>
                     <fieldset aria-label="Choose a size">
                         <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4 mt-3">
                             @foreach (var aesthetic in Enum.GetValues(typeof(Aesthetic)))
@@ -169,19 +192,31 @@
                                     <input 
                                     @onclick="() => ChoosePropertyValue((Aesthetic)aesthetic)" 
                                     type="radio" 
-                                    name="size-choice" 
+                                    name="aesthetic-choice" 
                                     class="sr-only">
-                                    <span>
+                                    <span class="w-full flex items-center justify-center text-center h-full">
                                         @(aesthetic.ToString().ToLower()
-                                                                .Split('_')
-                                                                .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
-                                                                .Aggregate((a, b) => a + " " + b))                                    </span>                                  
+                                            .Split('_')
+                                            .Select(word => word.First().ToString().ToUpper() + word.Substring(1))
+                                            .Aggregate((a, b) => a + " " + b))
+                                    </span>
                                 </label>
                             } 
                         </div>
                     </fieldset>
-                    <button type="submit" @onclick="CreateNewClothing" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">Submit</button>
+                    <div class="mt-8">
+                            <button type="submit" @onclick="CreateNewClothing"
+                                    class="!rounded-lg w-24 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3
+                                text-lg font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+                                focus:outline-none">
+                                Add
+                            </button>
+                        </div>
+
+                    </div>
+
                 </div>
+
                 @if (ShowError)
                 {
                     <ErrorAlert ErrorMessage=@ErrorMessage></ErrorAlert>
@@ -192,6 +227,7 @@
 </div>
 
 @code {
+
     public CreateClothingDTO Clothing = new CreateClothingDTO();
     public const int MAX_IMAGES = 3;
     public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
@@ -291,16 +327,24 @@
 
     public string GetColorClass(Color color)
     {
-        var baseClasses = "size-8 rounded-full border border-black/10 relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-hidden";
+        var baseClasses = "h-8 w-8 rounded-full border border-black/10 -m-0.5 flex cursor-pointer items-center justify-center p-0.5 focus:outline-none";
         bool isSelected = Clothing.Colors.Contains(color);
+        var selectedClasses = isSelected ? "ring ring-offset-1 ring-gray-400" : "";
 
         return color switch
         {
-            Color.BROWN => $"{baseClasses} {(isSelected ? "ring ring-offset-1 ring-gray-400" : "")} bg-orange-950 hover:bg-orange-800",
-            Color.BEIGE => $"{baseClasses} {(isSelected ? "ring ring-offset-1 ring-gray-400" : "")} bg-stone-400 hover:bg-stone-300",
-            Color.WHITE => $"{baseClasses} {(isSelected ? "ring ring-offset-1 ring-gray-400" : "")} bg-white",
-            Color.BLACK => $"{baseClasses} {(isSelected ? "ring ring-offset-1 ring-gray-400" : "")} bg-black",
-            _ => $"{baseClasses} {(isSelected ? $"ring ring-offset-1 ring-gray-400" : "")} bg-{color.ToString().ToLower()}-500 hover:bg-{color.ToString().ToLower()}-400"
+            Color.BROWN => $"{baseClasses} {selectedClasses} bg-orange-950 hover:bg-orange-800",
+            Color.BEIGE => $"{baseClasses} {selectedClasses} bg-stone-400 hover:bg-stone-300",
+            Color.WHITE => $"{baseClasses} {selectedClasses} bg-white hover:bg-gray-100",
+            Color.BLACK => $"{baseClasses} {selectedClasses} bg-black hover:bg-gray-900",
+            Color.BLUE => $"{baseClasses} {selectedClasses} bg-blue-500 hover:bg-blue-400",
+            Color.RED => $"{baseClasses} {selectedClasses} bg-red-500 hover:bg-red-400",
+            Color.GREEN => $"{baseClasses} {selectedClasses} bg-green-500 hover:bg-green-400",
+            Color.PURPLE => $"{baseClasses} {selectedClasses} bg-purple-500 hover:bg-purple-400",
+            Color.ORANGE => $"{baseClasses} {selectedClasses} bg-orange-500 hover:bg-orange-400",
+            Color.PINK => $"{baseClasses} {selectedClasses} bg-pink-500 hover:bg-pink-400",
+            Color.GRAY => $"{baseClasses} {selectedClasses} bg-gray-500 hover:bg-gray-400",
+            _ => $"{baseClasses} {selectedClasses} bg-gray-500 hover:bg-gray-400"
         };
     }
 
@@ -336,8 +380,8 @@
 
     public string GetPropertyClass<T>(T property)
     {
-        const string baseClass = "border-1 border-gray-900 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
-
+        const string baseClass = "border-1 border-gray-900 group relative flex items-center justify-center rounded-md px-4 py-3 text-xs text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6 h-full";
+        
         return property switch
         {
             Aesthetic aesthetic => Clothing.Aesthetic == aesthetic ? $"{baseClass} font-bold bg-gray-300" : $"{baseClass} bg-gray-50 hover:bg-gray-300",
@@ -351,15 +395,15 @@
     private string GetSeasonColor(Season season)
     {
         var isSelected = Clothing.Season == season;
-        const string baseClass = "border-1 border-gray-500 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-sm text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
+        const string baseClass = "border border-gray-500 group relative flex cursor-pointer items-center justify-center rounded-md px-4 py-3 text-xs text-gray-900 shadow-sm focus:outline-none sm:flex-1 sm:py-6";
 
         return season switch
         {
             Season.FALL => isSelected ? $"{baseClass} font-bold bg-amber-200" : $"{baseClass} bg-amber-500 hover:bg-amber-300",
-            Season.WINTER => isSelected ? $"{baseClass} font-bold bg-sky-200" : $"{baseClass} bg-sky-500 hover:bg-sky-300",
-            Season.SPRING => isSelected ? $"{baseClass} font-bold bg-rose-200" : $"{baseClass} bg-rose-500 hover:bg-rose-300",
-            Season.SUMMER => isSelected ? $"{baseClass} font-bold bg-lime-200" : $"{baseClass} bg-lime-500 hover:bg-lime-300",
-            _ => ""
+            Season.WINTER => isSelected ? $"{baseClass} font-bold bg-blue-200" : $"{baseClass} bg-blue-500 hover:bg-blue-300",
+            Season.SPRING => isSelected ? $"{baseClass} font-bold bg-pink-200" : $"{baseClass} bg-pink-500 hover:bg-pink-300",
+            Season.SUMMER => isSelected ? $"{baseClass} font-bold bg-green-200" : $"{baseClass} bg-green-500 hover:bg-green-300",
+            _ => baseClass
         };
     }
 
