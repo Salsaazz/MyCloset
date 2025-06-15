@@ -9,9 +9,9 @@ namespace MyCloset.Frontend.Blazor.Services
         public async Task<HttpResponseMessage> AddClothing(CreateClothingDTO clothing)
         {
             using HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7254");
+            client.BaseAddress = new Uri("https://localhost:7254/Clothing");
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("/Clothing", clothing);
+            HttpResponseMessage response = await client.PostAsJsonAsync("/create", clothing);
 
             if (!response.IsSuccessStatusCode)
             {

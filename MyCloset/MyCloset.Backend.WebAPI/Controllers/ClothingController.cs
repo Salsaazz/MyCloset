@@ -3,15 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 using MyCloset.Backend.Application.CQRS.Commands;
 using MyCloset.Backend.Application.CQRS.Queries;
 using MyCloset.Backend.Domain.DTOs;
+using MyCloset.Backend.Domain.Models;
 using MyCloset.Backend.WebAPI.Controllers.Interfaces;
 
 namespace MyCloset.Backend.WebAPI.Controllers
 {
     public class ClothingController(IMediator mediator) : IApiController(mediator)
     {
-        [HttpGet]
-        public async Task<IActionResult> GetAll() => Ok(await _mediator.Send(new GetAllClothingQuery()));
-
+        [HttpPost]
+        public async Task<IActionResult> GetAll([FromQuery] string? orderColumn, string? orderRow, int? page, int? pageSize, [FromBody] ClothingFilter clothingFilter)
+            => Ok(await _mediator.Send(new GetAllClothingQuery()
+            {
+                Filters = clothingFilter,
+                OrderColumn = orderColumn,
+                OrderRow = orderRow,
+                Page = page,
+                PageSize = pageSize
+            }
+            ));
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
@@ -28,7 +37,7 @@ namespace MyCloset.Backend.WebAPI.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> AddClothing([FromBody] CreateClothingDTO clothing)
         {
             try
