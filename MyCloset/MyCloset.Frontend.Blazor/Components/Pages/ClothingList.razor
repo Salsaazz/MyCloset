@@ -40,7 +40,8 @@ else{
     {
         try
         {
-            Clothes = await ClothingService.GetAllClothing();
+            var clothingFilters = new ClothingFilter(null, null, null, null, null, null, null, null, null, null);
+            Clothes = await ClothingService.GetAllClothing(clothingFilters, null, null, null, null);
             if (!Clothes.Any())
             {
                 string errorMessage = "The closet is empty...";

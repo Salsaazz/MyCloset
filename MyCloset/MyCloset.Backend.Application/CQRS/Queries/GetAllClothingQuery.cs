@@ -13,7 +13,6 @@ namespace MyCloset.Backend.Application.CQRS.Queries
         public int? Page { get; set; }
         public int? PageSize { get; set; }
     }
-    // Add fluentvalidation?
 
     public class GetAllClothingQueryHandler(IClothingRepository clothingRepo) : IRequestHandler<GetAllClothingQuery, IEnumerable<ClothingDTO?>>
     {

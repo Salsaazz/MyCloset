@@ -18,6 +18,7 @@ namespace MyCloset.Backend.Infrastructure.Contexts
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             new ClothingConfiguration().Configure(modelBuilder.Entity<Clothing>());
+            new ImageConfiguration().Configure(modelBuilder.Entity<Image>());
         }
 
     }

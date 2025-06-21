@@ -23,9 +23,15 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
+
+        builder.Services.AddHttpClient("",
+            client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:7254");
+            });
+        builder.Services.AddBlazoredLocalStorage();
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddScoped<IClothingService, ClothingService>();
-        builder.Services.AddBlazoredLocalStorage();
         builder.Configuration.AddConfiguration(config);
 
 #if DEBUG

@@ -11,7 +11,8 @@ namespace MyCloset.Backend.WebAPI.Controllers
     public class ClothingController(IMediator mediator) : IApiController(mediator)
     {
         [HttpPost]
-        public async Task<IActionResult> GetAll([FromQuery] string? orderColumn, string? orderRow, int? page, int? pageSize, [FromBody] ClothingFilter clothingFilter)
+        public async Task<IActionResult> GetAll([FromQuery] string? orderColumn, string? orderRow,
+            int? page, int? pageSize, [FromBody] ClothingFilter? clothingFilter)
             => Ok(await _mediator.Send(new GetAllClothingQuery()
             {
                 Filters = clothingFilter,

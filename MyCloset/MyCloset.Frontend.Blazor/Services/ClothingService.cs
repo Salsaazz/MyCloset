@@ -4,14 +4,14 @@ using HttpClient = System.Net.Http.HttpClient;
 
 namespace MyCloset.Frontend.Blazor.Services
 {
-    public class ClothingService : IClothingService
+    public class ClothingService(IHttpClientFactory httpClientFactory) : IClothingService
     {
+        private readonly HttpClient client = httpClientFactory.CreateClient();
+
         public async Task<HttpResponseMessage> AddClothing(CreateClothingDTO clothing)
         {
-            using HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7254/Clothing");
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("/create", clothing);
+            HttpResponseMessage response = await client.PostAsJsonAsync("Clothing/create", clothing);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -22,11 +22,43 @@ namespace MyCloset.Frontend.Blazor.Services
             return response;
         }
 
-        public async Task<List<ClothingDTO?>> GetAllClothing()
+        public async Task<List<ClothingDTO?>> GetAllClothing(ClothingFilter? clothingFilter, string? orderColumn, string? orderRow,
+            int? page, int? pageSize)
         {
-            using HttpClient client = new HttpClient();
+            var queryParams = ApplyQueryParameters(orderColumn, orderRow, page, pageSize);
 
-            return await client.GetFromJsonAsync<List<ClothingDTO?>>(new Uri("https://localhost:7254/Clothing"));
+            var uri = "/Clothing";
+            if (queryParams.Count > 0)
+                uri += "?" + string.Join("&", queryParams);
+
+            if (clothingFilter is not null)
+            {
+                var response = await client.PostAsJsonAsync(uri, clothingFilter);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadFromJsonAsync<List<ClothingDTO?>>();
+            }
+
+            return await client.GetFromJsonAsync<List<ClothingDTO?>>(uri);
+        }
+
+        private List<string> ApplyQueryParameters(string? orderColumn, string? orderRow,
+            int? page, int? pageSize)
+        {
+            var queryParams = new List<string>();
+
+            if (!string.IsNullOrWhiteSpace(orderColumn))
+                queryParams.Add($"orderColumn={Uri.EscapeDataString(orderColumn)}");
+
+            if (!string.IsNullOrWhiteSpace(orderRow))
+                queryParams.Add($"orderRow={Uri.EscapeDataString(orderRow)}");
+
+            if (page.HasValue)
+                queryParams.Add($"page={page.Value}");
+
+            if (pageSize.HasValue)
+                queryParams.Add($"pageSize={pageSize.Value}");
+
+            return queryParams;
         }
     }
 }
