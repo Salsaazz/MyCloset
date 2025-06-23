@@ -1,5 +1,6 @@
 ﻿using MyCloset.Frontend.Blazor.Models;
 using System.Net.Http.Json;
+using System.Text;
 using HttpClient = System.Net.Http.HttpClient;
 
 namespace MyCloset.Frontend.Blazor.Services

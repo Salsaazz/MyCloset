@@ -6,8 +6,8 @@
          alt="@Clothing.Name">
     <div class="mt-2 flex justify-between h-8">
         <div class="min-w-0">
-            <h4 class=" font-semibold text-gray-700">
-                @Clothing.Name
+            <h4 class=" font-semibold text-gray-700 truncate">
+                 @Clothing.Name
             </h4>
         </div>
         <div class="flex gap-x-1">
@@ -30,6 +30,8 @@
 @code {
     [Parameter]
     public required ClothingDTO Clothing { get; set; }
+
+    private const int MaxNameLenght = 7;
 
     public string RenderImage()
     {
