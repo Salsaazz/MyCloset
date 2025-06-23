@@ -1,5 +1,4 @@
-﻿using Blazored.LocalStorage;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MyCloset.Frontend.Blazor.Services;
 using System.Reflection;
@@ -29,7 +28,6 @@ public static class MauiProgram
             {
                 client.BaseAddress = new Uri("https://localhost:7254");
             });
-        builder.Services.AddBlazoredLocalStorage();
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddScoped<IClothingService, ClothingService>();
         builder.Configuration.AddConfiguration(config);
