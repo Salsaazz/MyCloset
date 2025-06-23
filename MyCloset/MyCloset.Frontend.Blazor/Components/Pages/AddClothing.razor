@@ -5,7 +5,6 @@
 @using Services;
 @inject IClothingService ClothingService;
 @inject NavigationManager navigationHelper;
-@inject Blazored.LocalStorage.ILocalStorageService localStorage;
 @page "/add"
 
 @if (ShowSuccess)
@@ -17,7 +16,7 @@
         <!-- Image gallery -->
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 grid max-w-7xl grid-cols-3 gap-4 lg:gap-x-8">
 
-            @for(int i = 0; i < MAX_IMAGES; i++)
+            @for(int i = 0; i < MaxImages; i++)
             {
                 int index = i;
                 <div>
@@ -29,7 +28,7 @@
                                          file:text-sm file:font-semibold
                                          file:bg-blue-50 file:text-blue-700
                                          hover:file:bg-blue-100"
-                                   accept="@ALLOWED_IMG_EXTENSIONS"
+                                   accept="@AllowedImgExtensions"
                                    OnChange="(ev) => UploadImage(ev, index)" />
 
                         <button @onclick="() => ClearItem(index)"
@@ -229,15 +228,15 @@
 @code {
 
     public CreateClothingDTO Clothing = new CreateClothingDTO();
-    public const int MAX_IMAGES = 3;
-    public CreateImageDTO[] Images= new CreateImageDTO[MAX_IMAGES];
+    public const int MaxImages = 3;
+    public CreateImageDTO[] Images= new CreateImageDTO[MaxImages];
     public bool ShowError { get; set; }
     public bool ShowSuccess { get; set; }
     private string _successtext = "Clothing added to closet!";
     public string? ErrorMessage { get; set; }
     // max size 2GB
-    private const uint MAX_FILE_SIZE = 200000000;
-    private const string ALLOWED_IMG_EXTENSIONS = "image/jpeg, image/jpg, image/png"; 
+    private const uint MaxFileSize = 200000000;
+    private const string AllowedImgExtensions = "image/jpeg, image/jpg, image/png"; 
 
     public async Task CreateNewClothing()
     {
@@ -273,9 +272,8 @@
         }
     }
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        await localStorage.RemoveItemAsync("ShowSuccess");
         ShowSuccess = false;
     }
 
@@ -301,7 +299,7 @@
         try
         {
             var file = eventArgs.GetMultipleFiles().FirstOrDefault();
-            if (file is not null && file.Size <= MAX_FILE_SIZE)
+            if (file is not null && file.Size <= MaxFileSize)
             {
                 var buffer = new byte[file.Size];
                 using (var stream = file.OpenReadStream())
@@ -411,14 +409,12 @@
     {
         ShowSuccess = true;
         ShowError = false;
-        await localStorage.SetItemAsync("ShowSuccess", true);
         ResetClothing();
         StateHasChanged(); // Force immediate UI update
 
         await Task.Delay(5000); // wait 5 seconds
 
         ShowSuccess = false;
-        await localStorage.RemoveItemAsync("ShowSuccess");
         StateHasChanged();
     }
 
@@ -427,7 +423,7 @@
         Clothing = new CreateClothingDTO();
         ResetImages();
     }
-    private void ResetImages() => Images = new CreateImageDTO[MAX_IMAGES];
+    private void ResetImages() => Images = new CreateImageDTO[MaxImages];
 
     private async Task SetError(string errorMessage, bool isHttpMessage, int? statusCode)
     {
