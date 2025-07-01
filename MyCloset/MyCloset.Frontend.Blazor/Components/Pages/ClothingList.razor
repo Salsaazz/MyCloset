@@ -4,21 +4,27 @@
 @inject IClothingService ClothingService;
 @page "/"
 
-@if (!_showLoading)
+@if (_isLoading)
 {
-    <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
-        @foreach (var clothing in Clothes)
-        {
-            <ClothingItem Clothing="clothing"></ClothingItem>
-        }
+    <div class="h-screen flex items-center justify-center">
+    <div class="w-10 h-10 sm:w-12 sm:h-12">
+        <LoadingCircle/>
     </div>
+    </div>
+
 }
 else{
-    <div class="h-screen flex items-center justify-center">
-        <div class="w-10 h-10 sm:w-12 sm:h-12">
-            <LoadingCircle></LoadingCircle>
+        <div>
+        <header >
+            <SearchInput Placeholder="Search for clothing..." OnChildClick="SearchByClothingName"/>
+        </header>
+        <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
+            @foreach (var clothing in Clothes)
+            {
+                <ClothingItem Clothing="clothing"></ClothingItem>
+            }
         </div>
-    </div>
+        </div>
 }
 @if (ShowError)
 {
@@ -29,19 +35,30 @@ else{
     public List<ClothingDTO?> Clothes { get; set; } = [];
     public bool ShowError { get; set; }
     public string? ErrorMessage { get; set; }
-    private bool _showLoading = true;
+    private bool _isLoading = true;
+    public string? _searchTerm;
+    private bool _isInitializing = true;
 
     protected override async Task OnInitializedAsync()
     {
-        await SendCreatClothingRequest();
+        await LoadClothes(_searchTerm);
     }
 
-    public async Task SendCreatClothingRequest()
+    public async Task LoadClothes(string? searchTerm)
     {
+        _isLoading = true;
+        ShowError = false;
+
         try
         {
-            var clothingFilters = new ClothingFilter(null, null, null, null, null, null, null, null, null, null);
+            var clothingFilters = new ClothingFilter
+            (
+                _searchTerm, null, null, null, null, null, null, 
+                null, null, null
+            );
+
             Clothes = await ClothingService.GetAllClothing(clothingFilters, null, null, null, null);
+
             if (!Clothes.Any())
             {
                 string errorMessage = "The closet is empty...";
@@ -58,7 +75,7 @@ else{
         }
         finally
         {
-            _showLoading = false;
+            _isLoading = false;
         }
     }
 
@@ -72,6 +89,12 @@ else{
 
         ErrorMessage = statusCode.HasValue
             ? $" ({statusCode}): {processedMessage}"
-            : $" {processedMessage}"; StateHasChanged();
+            : $" {processedMessage}";
+    }
+
+    public async Task SearchByClothingName(string searchTerm)
+    {
+        _searchTerm = searchTerm;
+        await LoadClothes(string.IsNullOrWhiteSpace(_searchTerm) ? null : _searchTerm);
     }
 }

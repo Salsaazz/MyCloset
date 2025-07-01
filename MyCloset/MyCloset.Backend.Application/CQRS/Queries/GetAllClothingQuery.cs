@@ -25,6 +25,6 @@ namespace MyCloset.Backend.Application.CQRS.Queries
         }
 
         private static int SetDefaultValueToPage(int? page) => page is null or < 1 ? 1 : page.Value;
-        private static int SetDefaultValueToPageSize(int? pageSize) => pageSize is null or < 1 ? 12 : pageSize.Value;
+        private static int SetDefaultValueToPageSize(int? pageSize) => pageSize is null or < 1 ? 10 : pageSize.Value;
     }
 }

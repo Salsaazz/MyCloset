@@ -40,14 +40,14 @@ namespace MyCloset.Backend.Infrastructure.Repositories
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .Select(c => new ClothingDTO
-            {
-                Id = c.Id,
-                Name = c.Name,
-                Store = c.Store,
-                Prize = c.Prize,
-                Date = c.Date,
-                Images = c.Images
-            }).ToListAsync();
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Store = c.Store,
+                    Prize = c.Prize,
+                    Date = c.Date,
+                    Images = c.Images
+                }).ToListAsync();
 
             return clothes;
         }
