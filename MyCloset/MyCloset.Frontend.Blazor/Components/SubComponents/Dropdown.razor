@@ -1,0 +1,58 @@
+﻿
+    <div id="menu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    <div class="flex justify-between" onclick="@ToggleDropdown">
+            <p class="self-center mb-0 bold">
+                @Title
+            </p>
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+            class="fr-ec-icon fr-ec-icon--default fr-ec-filter-pill--icon"
+            role="presentation">
+                @if (_isOpen)
+                {
+                    <path d="M18.8238 6.09603L17.9048 5.17603L11.9998 11.081L6.09576 5.17603L5.17676 6.09603L11.0808 12L5.17676 17.904L6.09576 18.824L11.9998 12.919L17.9048 18.824L18.8238 17.904L12.9198 12L18.8238 6.09603Z"></path>
+                }
+                else
+                {
+                    <path d="M12 15.3319L6.59399 11.0079L7.40599 9.99194L12 13.6679L16.594 9.99194L17.406 11.0079L12 15.3319Z"></path>
+                }
+            </svg>      
+
+    </div>
+        @if (_isOpen)
+        {
+        <div class="mt-2 border-t-1 border-dotted border-slate-300 text-gray-900 text-sm rounded-lg  block w-full">
+            <div class="grid grid-cols-1 mt-4 gap-y-4">
+                @foreach (var item in DropdownItems)
+                {
+                    <div @onclick="() => SelectItem(item)" class="grid grid-cols-1 content-center cursor-pointer">
+                        <div>
+                            @item
+                            <input name="input-@item" checked="@_selectedItems.Contains(item)" type="checkbox"
+                                   class="text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+        }
+</div>
+
+@code {
+    [Parameter]
+    public required string[] DropdownItems { get; set; } = [];
+    [Parameter]
+    public required string Title { get; set; }
+    private readonly HashSet<string> _selectedItems = new HashSet<string>();
+    private bool _isOpen;
+
+    private void ToggleDropdown() => _isOpen = !_isOpen;
+
+    private void SelectItem(string item)
+    {
+        if (!_selectedItems.Add(item) && item != Title)
+        {
+            _selectedItems.Remove(item);
+        }
+    }
+}

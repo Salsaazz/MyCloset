@@ -1,4 +1,5 @@
-﻿@using MyCloset.Frontend.Blazor.Models
+﻿@using MyCloset.Frontend.Blazor.Enums
+@using MyCloset.Frontend.Blazor.Models
 @using MyCloset.Frontend.Blazor.Services
 @using MyCloset.Frontend.Blazor.Components.SubComponents
 @inject IClothingService ClothingService;
@@ -17,13 +18,15 @@ else{
         <div>
         <header >
             <SearchInput Placeholder="Search for clothing..." OnChildClick="SearchByClothingName"/>
+            <Dropdown Title="Season" DropdownItems="seasons" />
         </header>
-        <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
+
+@*         <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
             @foreach (var clothing in Clothes)
             {
                 <ClothingItem Clothing="clothing"></ClothingItem>
             }
-        </div>
+        </div> *@
         </div>
 }
 @if (ShowError)
@@ -38,6 +41,7 @@ else{
     private bool _isLoading = true;
     public string? _searchTerm;
     private bool _isInitializing = true;
+    private readonly string[] seasons = Enum.GetNames(typeof(Season));  
 
     protected override async Task OnInitializedAsync()
     {
