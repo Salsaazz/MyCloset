@@ -2,7 +2,7 @@
 
 <div class="group">
     <img src="@RenderImage()"
-         class="aspect-square w-full rounded-md bg-gray-200 object-cover transition-opacity group-hover:opacity-75"
+         class="aspect-square w-full rounded-md bg-gray-200 object-cover cursor-pointer"
          alt="@Clothing.Name">
     <div class="mt-2 flex justify-between h-8">
         <div class="min-w-0">
@@ -30,8 +30,6 @@
 @code {
     [Parameter]
     public required ClothingDTO Clothing { get; set; }
-
-    private const int MaxNameLenght = 7;
 
     public string RenderImage()
     {
