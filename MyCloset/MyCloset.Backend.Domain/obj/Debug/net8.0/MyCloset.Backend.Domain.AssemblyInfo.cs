@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyCloset.Backend.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eebe9ab1f4683da094db650b67accdb9e52fbc5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcd8a53d22682aaa793a6e5bb99c7e40e5f7894")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyCloset.Backend.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyCloset.Backend.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

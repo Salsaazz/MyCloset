@@ -16,17 +16,36 @@
 }
 else{
         <div>
-        <header >
-            <SearchInput Placeholder="Search for clothing..." OnChildClick="SearchByClothingName"/>
-            <Dropdown Title="Season" DropdownItems="seasons" />
+        <header class=""> 
+            <div class="flex flex-row gap-2 flex-wrap">
+                <SearchInput Placeholder="Search for clothing..." OnChildClick="SearchByClothingName"/>
+                <div class="w-auto">
+                 <Dropdown Title="Season" DropdownItems="seasons" />
+                </div>
+                <div class="w-auto">
+                <Dropdown Title="Color" DropdownItems="colors" />
+                </div>
+                <div class="w-auto">
+                <Dropdown Title="Aesthetic" DropdownItems="aesthetics" />
+                </div>
+                <div class="w-auto">
+                 <Dropdown Title="ClothingType" DropdownItems="clothingTypes" />
+                </div>
+                <div class="w-auto">
+                    <Dropdown Title="Material" DropdownItems="materials" />
+                </div>
+                <div class="w-auto">
+                    <Dropdown Title="Sizes" DropdownItems="sizes" />
+                </div>
+            </div>
         </header>
 
-@*         <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
+        <div class="grid gap-y-4 sm:gap-y-8 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-5">
             @foreach (var clothing in Clothes)
             {
                 <ClothingItem Clothing="clothing"></ClothingItem>
             }
-        </div> *@
+        </div>
         </div>
 }
 @if (ShowError)
@@ -39,9 +58,17 @@ else{
     public bool ShowError { get; set; }
     public string? ErrorMessage { get; set; }
     private bool _isLoading = true;
-    public string? _searchTerm;
+    private string? _searchTerm;
     private bool _isInitializing = true;
-    private readonly string[] seasons = Enum.GetNames(typeof(Season));  
+    private string? name;
+    private string? store;
+    private double? prize;
+    private readonly string[]? seasons = Enum.GetNames(typeof(Season));  
+    private readonly string[]? sizes = Enum.GetNames(typeof(Size));  
+    private readonly string[]? colors = Enum.GetNames(typeof(Color));  
+    private readonly string[]? aesthetics = Enum.GetNames(typeof(Aesthetic));  
+    private readonly string[]? clothingTypes = Enum.GetNames(typeof(ClothingType));  
+    private readonly string[]? materials = Enum.GetNames(typeof(Material));  
 
     protected override async Task OnInitializedAsync()
     {

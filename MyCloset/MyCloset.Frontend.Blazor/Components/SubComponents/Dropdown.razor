@@ -1,41 +1,39 @@
-﻿
-<div id="menu" class="h-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+﻿<div id="menu" class="relative inline-block w-full border border-gray-300  rounded-lg ">
     <div class="flex justify-between cursor-pointer h-full p-2.5" onclick="@ToggleDropdown">
-            <p class="self-center mb-0 font-bold">
-                @Title
-            </p>
-            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
-            class="fr-ec-icon fr-ec-icon--default fr-ec-filter-pill--icon"
-            role="presentation">
-            @if (_isOpen)
-            {
-                <path d="M18.8238 6.09603L17.9048 5.17603L11.9998 11.081L6.09576 5.17603L5.17676 6.09603L11.0808 12L5.17676 17.904L6.09576 18.824L11.9998 12.919L17.9048 18.824L18.8238 17.904L12.9198 12L18.8238 6.09603Z" />
-            }
-            else
-            {
-                <path d="M12 19L5 12L7 10L12 15L17 10L19 12L12 19Z" />
-            }
-            </svg>      
-
-    </div>
+        <p class="self-center mb-0 font-bold">
+            @Title
+        </p>
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+        class="fr-ec-icon fr-ec-icon--default fr-ec-filter-pill--icon"
+        role="presentation">
         @if (_isOpen)
         {
-        <div class="mt-2 border-t-1 border-dotted border-slate-300 text-gray-900 text-sm rounded-lg  block w-full  p-2.5">
-            <div class="grid grid-cols-1 mt-4 gap-y-4">
+            <path d="M18.8238 6.09603L17.9048 5.17603L11.9998 11.081L6.09576 5.17603L5.17676 6.09603L11.0808 12L5.17676 17.904L6.09576 18.824L11.9998 12.919L17.9048 18.824L18.8238 17.904L12.9198 12L18.8238 6.09603Z" />
+        }
+        else
+        {
+            <path d="M12 19L5 12L7 10L12 15L17 10L19 12L12 19Z" />
+        }
+        </svg>      
+    </div>
+    @if (_isOpen)
+    {
+        <div class="absolute left-0 mt-1 bg-white rounded-md shadow-lg min-w-full w-auto whitespace-nowrap">
+            <div class="py-1">
                 @foreach (var item in DropdownItems)
                 {
-                    <div @onclick="() => SelectItem(item)" class="grid grid-cols-1 content-center cursor-pointer">
-                        <div>
-                            @item
-                            <input name="input-@item" checked="@_selectedItems.Contains(item)" type="checkbox"
-                                   class="text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
-                        </div>
-
+                    <div @onclick="() => SelectItem(item)"
+                         class="flex justify-between items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+                        <span>@item</span>
+                        <input name="input-@item"
+                               checked="@_selectedItems.Contains(item)"
+                               type="checkbox"
+                               class="h-4 w-4 rounded border-gray-300 text-slate-700 focus:ring-slate-700 focus:ring-2 ml-4">
                     </div>
                 }
             </div>
         </div>
-        }
+    }
 </div>
 
 @code {
